@@ -1,0 +1,107 @@
+object Frm_padrao: TFrm_padrao
+  Left = 0
+  Top = 0
+  Caption = 'Formulario'
+  ClientHeight = 442
+  ClientWidth = 628
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  KeyPreview = True
+  OnKeyPress = FormKeyPress
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 628
+    Height = 73
+    Align = alTop
+    Color = clBtnShadow
+    ParentBackground = False
+    TabOrder = 0
+    object Bit_incluir: TBitBtn
+      Left = 8
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Incluir'
+      TabOrder = 0
+    end
+    object Bit_deletar: TBitBtn
+      Left = 84
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Deletar'
+      TabOrder = 1
+    end
+    object Bit_alterar: TBitBtn
+      Left = 160
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Alterar'
+      TabOrder = 2
+    end
+    object Bit_gravar: TBitBtn
+      Left = 236
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Gravar'
+      TabOrder = 3
+    end
+    object Bit_cancelar: TBitBtn
+      Left = 312
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Cancelar'
+      TabOrder = 4
+    end
+    object Bit_atualizar: TBitBtn
+      Left = 388
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Atualizar'
+      TabOrder = 5
+    end
+    object BitBtn7: TBitBtn
+      Left = 464
+      Top = 13
+      Width = 70
+      Height = 50
+      Caption = 'Pesquisar'
+      TabOrder = 6
+    end
+    object BitBtn8: TBitBtn
+      Left = 540
+      Top = 13
+      Width = 70
+      Height = 50
+      TabOrder = 7
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 392
+    Width = 628
+    Height = 50
+    Align = alBottom
+    Color = clBtnShadow
+    ParentBackground = False
+    TabOrder = 1
+    object DBNavigator1: TDBNavigator
+      Left = 408
+      Top = 0
+      Width = 220
+      Height = 25
+      VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
+      TabOrder = 0
+    end
+  end
+end

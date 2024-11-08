@@ -1,0 +1,47 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.DBCtrls;
+
+type
+  TFrm_padrao = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    Bit_incluir: TBitBtn;
+    Bit_deletar: TBitBtn;
+    Bit_alterar: TBitBtn;
+    Bit_gravar: TBitBtn;
+    Bit_cancelar: TBitBtn;
+    Bit_atualizar: TBitBtn;
+    Bit_pesquisar: TBitBtn;
+    Bit_fechar: TBitBtn;
+    DBNavigator1: TDBNavigator;
+    procedure FormKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_padrao: TFrm_padrao;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm_padrao.FormKeyPress(Sender: TObject; var Key: Char);
+begin
+  //Faz ENTER ser igual TAB
+  if key=#13 then
+    begin
+      Key:=#0;
+      Perform(WM_NEXTDLGCTL, 0, 0);
+    end;
+end;
+
+end.
