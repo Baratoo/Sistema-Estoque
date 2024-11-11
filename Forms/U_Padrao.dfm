@@ -11,6 +11,7 @@ object Frm_padrao: TFrm_padrao
   Font.Name = 'Segoe UI'
   Font.Style = []
   KeyPreview = True
+  Position = poScreenCenter
   OnKeyPress = FormKeyPress
   TextHeight = 15
   object Panel1: TPanel
@@ -68,6 +69,7 @@ object Frm_padrao: TFrm_padrao
       Height = 50
       BiDiMode = bdLeftToRight
       Caption = 'Gravar'
+      Enabled = False
       Layout = blGlyphRight
       ParentBiDiMode = False
       TabOrder = 3
@@ -92,6 +94,7 @@ object Frm_padrao: TFrm_padrao
       Height = 50
       BiDiMode = bdLeftToRight
       Caption = 'Atualizar'
+      Enabled = False
       Layout = blGlyphRight
       ParentBiDiMode = False
       TabOrder = 5

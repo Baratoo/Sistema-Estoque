@@ -22,9 +22,9 @@ object Frm_Principal: TFrm_Principal
     Color = clMedGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 624
-    object SpeedButton1: TSpeedButton
-      Left = 0
+    ExplicitWidth = 984
+    object Sbt_usuario: TSpeedButton
+      Left = -7
       Top = 0
       Width = 100
       Height = 90
@@ -552,6 +552,7 @@ object Frm_Principal: TFrm_Principal
         0000000000000000000000000000000000000000000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = Sbt_usuarioClick
     end
     object SpeedButton2: TSpeedButton
       Left = 99
@@ -4932,9 +4933,8 @@ object Frm_Principal: TFrm_Principal
       item
         Width = 50
       end>
-    ExplicitLeft = 360
-    ExplicitTop = 432
-    ExplicitWidth = 0
+    ExplicitTop = 422
+    ExplicitWidth = 984
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer

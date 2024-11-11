@@ -10,7 +10,7 @@ uses
 type
   TFrm_Principal = class(TForm)
     Panel1: TPanel;
-    SpeedButton1: TSpeedButton;
+    Sbt_usuario: TSpeedButton;
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
     SpeedButton4: TSpeedButton;
@@ -42,6 +42,8 @@ type
     ListaCompras2: TMenuItem;
     procedure Timer1Timer(Sender: TObject);
     procedure SpeedButton9Click(Sender: TObject);
+    procedure abreTelaUsuario();
+    procedure Sbt_usuarioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -55,9 +57,37 @@ implementation
 
 {$R *.dfm}
 
+uses U_Padrao, U_CadUsuario;
+
+procedure TFrm_Principal.abreTelaUsuario;
+begin
+
+  Frm_usuario := TFrm_usuario.Create(self);
+  Frm_usuario.ShowModal;
+
+  try
+
+  finally
+    Frm_usuario.Free;
+    Frm_usuario := nil;
+  end;
+
+end;
+
+procedure TFrm_Principal.Sbt_usuarioClick(Sender: TObject);
+begin
+
+  abreTelaUsuario;
+
+end;
+
 procedure TFrm_Principal.SpeedButton9Click(Sender: TObject);
 begin
-  close;
+  if MessageDlg('Deseja sair do sistema?', mtConfirmation,[mbOK, mbNo], 0) = mrOK then
+    begin
+      Application.Terminate;
+    end;
+
 end;
 
 procedure TFrm_Principal.Timer1Timer(Sender: TObject);

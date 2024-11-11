@@ -52,6 +52,9 @@ uses U_DM;
 
 procedure TFrm_padrao.Bit_alterarClick(Sender: TObject);
 begin
+  if not Q_padrao.Active then
+
+    Q_padrao.Open;
     TrataBotoes;
     if MessageDlg('Deseja Alterar?',mtConfirmation,[mbOK, mbNO],0) = mrOk then
     begin
@@ -65,32 +68,40 @@ end;
 
 procedure TFrm_padrao.Bit_atualizarClick(Sender: TObject);
 begin
-  TrataBotoes;
-  Q_padrao.Refresh;
-  MessageDlg('Registro atualizao!', mtInformation, [mbOK], 0);
+  if not Q_padrao.Active then
+
+    Q_padrao.Open;
+    TrataBotoes;
+    Q_padrao.Refresh;
+    MessageDlg('Registro atualizao!', mtInformation, [mbOK], 0);
 
 end;
 
 procedure TFrm_padrao.Bit_cancelarClick(Sender: TObject);
 begin
-  TrataBotoes;
-  Q_padrao.Cancel;
-  MessageDlg('Cancelado!', mtInformation, [mbOK], 0);
+  if not Q_padrao.Active then
+
+    Q_padrao.Open;
+    TrataBotoes;
+    Q_padrao.Cancel;
+    MessageDlg('Cancelado!', mtInformation, [mbOK], 0);
 
 end;
 
 procedure TFrm_padrao.Bit_deletarClick(Sender: TObject);
 begin
-  TrataBotoes;
-  if MessageDlg('Deseja deletar?',mtConfirmation,[mbOK, mbNO],0) = mrOk then
-    begin
-      Q_padrao.Delete;
-      MessageDlg('Registro deletado com sucesso!', mtInformation, [mbOK], 0);
-      TrataBotoes;
-    end
-    else
+  if not Q_padrao.Active then
+    Q_padrao.Open;
     TrataBotoes;
-    abort;
+    if MessageDlg('Deseja deletar?',mtConfirmation,[mbOK, mbNO],0) = mrOk then
+      begin
+        Q_padrao.Delete;
+        MessageDlg('Registro deletado com sucesso!', mtInformation, [mbOK], 0);
+        TrataBotoes;
+      end
+    else
+      TrataBotoes;
+      abort;
 
 end;
 
@@ -101,16 +112,20 @@ end;
 
 procedure TFrm_padrao.Bit_gravarClick(Sender: TObject);
 begin
-  TrataBotoes;
-  Q_padrao.Post;
-  MessageDlg('Registro salvo', TMsgDlgType.mtInformation, [mbOK], 0);
+  if not Q_padrao.Active then
+    Q_padrao.Open;
+    TrataBotoes;
+    Q_padrao.Post;
+    MessageDlg('Registro salvo', TMsgDlgType.mtInformation, [mbOK], 0);
 
 end;
 
 procedure TFrm_padrao.Bit_incluirClick(Sender: TObject);
 begin
-  TrataBotoes;
-  Q_padrao.Append;
+  if not Q_padrao.Active then
+      Q_padrao.Open;
+      TrataBotoes;
+      Q_padrao.Append;
 end;
 
 procedure TFrm_padrao.FormKeyPress(Sender: TObject; var Key: Char);
