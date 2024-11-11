@@ -40,7 +40,11 @@ inherited Frm_usuario: TFrm_usuario
     Caption = 'CADASTRO'
     FocusControl = DB_cadastro
   end
+  inherited Panel1: TPanel
+    TabOrder = 4
+  end
   inherited Panel2: TPanel
+    TabOrder = 5
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -52,17 +56,17 @@ inherited Frm_usuario: TFrm_usuario
     Height = 23
     DataField = 'ID_USUARIO'
     DataSource = ds_padrao
-    TabOrder = 2
+    TabOrder = 0
   end
   object DB_nome: TDBEdit [8]
     Left = 8
-    Top = 152
+    Top = 154
     Width = 428
     Height = 23
     CharCase = ecUpperCase
     DataField = 'NOME'
     DataSource = ds_padrao
-    TabOrder = 3
+    TabOrder = 1
   end
   object DB_senha: TDBEdit [9]
     Left = 8
@@ -72,7 +76,7 @@ inherited Frm_usuario: TFrm_usuario
     DataField = 'SENHA'
     DataSource = ds_padrao
     PasswordChar = '*'
-    TabOrder = 4
+    TabOrder = 2
   end
   object DB_cadastro: TDBEdit [10]
     Left = 282
@@ -81,19 +85,26 @@ inherited Frm_usuario: TFrm_usuario
     Height = 23
     DataField = 'CADASTRO'
     DataSource = ds_padrao
-    TabOrder = 5
+    Enabled = False
+    TabOrder = 6
   end
   object DB_tipo: TDBComboBox [11]
-    Left = 237
+    Left = 236
     Top = 200
     Width = 200
     Height = 23
+    DataField = 'TIPO'
+    DataSource = ds_padrao
     Items.Strings = (
       'ADM'
       'APOIO')
-    TabOrder = 6
+    TabOrder = 3
   end
   inherited Q_padrao: TFDQuery
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
+    UpdateOptions.FetchGeneratorsPoint = gpImmediate
+    UpdateOptions.GeneratorName = 'GEN_ID_USUARIO'
+    UpdateOptions.AutoIncFields = 'ID_USUARIO'
     SQL.Strings = (
       'select '
       ' id_usuario,'
@@ -106,7 +117,7 @@ inherited Frm_usuario: TFrm_usuario
     object Q_padraoID_USUARIO: TIntegerField
       FieldName = 'ID_USUARIO'
       Origin = 'ID_USUARIO'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      ProviderFlags = [pfInWhere, pfInKey]
       Required = True
     end
     object Q_padraoNOME: TStringField

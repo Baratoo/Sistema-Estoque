@@ -229,7 +229,7 @@ inherited Frm_Empresa: TFrm_Empresa
     DataSource = ds_padrao
     TabOrder = 9
   end
-  object DBImg_foto: TDBImage [27]
+  object DBImage1: TDBImage [27]
     Left = 397
     Top = 96
     Width = 105
@@ -266,20 +266,20 @@ inherited Frm_Empresa: TFrm_Empresa
     DataSource = ds_padrao
     TabOrder = 16
   end
-  object Bit_foto: TBitBtn [31]
+  object BitBtn1: TBitBtn [31]
     Left = 519
     Top = 96
     Width = 50
     Height = 25
-    Caption = 'Foto'
+    Caption = 'BitBtn1'
     TabOrder = 17
   end
-  object Bit_limpaFoto: TBitBtn [32]
+  object BitBtn2: TBitBtn [32]
     Left = 519
     Top = 127
     Width = 50
     Height = 25
-    Caption = 'Limpa'
+    Caption = 'BitBtn2'
     TabOrder = 18
   end
   inherited Q_padrao: TFDQuery
@@ -393,9 +393,5 @@ inherited Frm_Empresa: TFrm_Empresa
   inherited ds_padrao: TDataSource
     Left = 576
     Top = 280
-  end
-  object OpenDialog1: TOpenDialog
-    Left = 536
-    Top = 184
   end
 end

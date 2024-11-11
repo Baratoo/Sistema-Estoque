@@ -47,7 +47,8 @@ type
     DB_cnpj: TDBEdit;
     Label11: TLabel;
     DB_email: TDBEdit;
-    DBImg_foto: TDBImage;
+    Label12: TLabel;
+    DBImage1: TDBImage;
     Label13: TLabel;
     DBEdit12: TDBEdit;
     Label14: TLabel;
@@ -55,9 +56,6 @@ type
     Q_padraoRAZAO_SOCIAL: TStringField;
     Label15: TLabel;
     DB_razaoSocial: TDBEdit;
-    Bit_foto: TBitBtn;
-    Bit_limpaFoto: TBitBtn;
-    OpenDialog1: TOpenDialog;
     procedure Bit_incluirClick(Sender: TObject);
   private
     { Private declarations }

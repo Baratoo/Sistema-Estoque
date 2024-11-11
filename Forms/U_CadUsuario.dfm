@@ -1,5 +1,9 @@
 inherited Frm_usuario: TFrm_usuario
   Caption = 'CADASTRO DE USUARIO'
+  ClientHeight = 492
+  ClientWidth = 624
+  ExplicitWidth = 636
+  ExplicitHeight = 530
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 8
@@ -41,10 +45,16 @@ inherited Frm_usuario: TFrm_usuario
     FocusControl = DB_cadastro
   end
   inherited Panel1: TPanel
+    Width = 624
     TabOrder = 4
+    ExplicitWidth = 620
   end
   inherited Panel2: TPanel
+    Top = 442
+    Width = 624
     TabOrder = 5
+    ExplicitTop = 390
+    ExplicitWidth = 620
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end

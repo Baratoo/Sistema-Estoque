@@ -120,7 +120,7 @@
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="..\Forms\U_Empresa.pas">
-            <Form>Frm_padrao1</Form>
+            <Form>Frm_Empresa</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">

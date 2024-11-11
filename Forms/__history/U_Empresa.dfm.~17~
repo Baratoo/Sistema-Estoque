@@ -229,7 +229,7 @@ inherited Frm_Empresa: TFrm_Empresa
     DataSource = ds_padrao
     TabOrder = 9
   end
-  object DBImg_foto: TDBImage [27]
+  object DBImage1: TDBImage [27]
     Left = 397
     Top = 96
     Width = 105

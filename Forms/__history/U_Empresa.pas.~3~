@@ -28,37 +28,31 @@ type
     Label1: TLabel;
     DBEdit1: TDBEdit;
     Label2: TLabel;
-    DB_nFantasia: TDBEdit;
+    DBEdit2: TDBEdit;
     Label3: TLabel;
-    DB_endereco: TDBEdit;
+    DBEdit3: TDBEdit;
     Label4: TLabel;
-    DB_numero: TDBEdit;
+    DBEdit4: TDBEdit;
     Label5: TLabel;
-    DB_bairro: TDBEdit;
+    DBEdit5: TDBEdit;
     Label6: TLabel;
-    DB_cidade: TDBEdit;
+    DBEdit6: TDBEdit;
     Label7: TLabel;
-    DB_uf: TDBEdit;
+    DBEdit7: TDBEdit;
     Label8: TLabel;
-    DB_cep: TDBEdit;
+    DBEdit8: TDBEdit;
     Label9: TLabel;
-    DB_telefone: TDBEdit;
+    DBEdit9: TDBEdit;
     Label10: TLabel;
-    DB_cnpj: TDBEdit;
+    DBEdit10: TDBEdit;
     Label11: TLabel;
-    DB_email: TDBEdit;
-    DBImg_foto: TDBImage;
+    DBEdit11: TDBEdit;
+    Label12: TLabel;
+    DBImage1: TDBImage;
     Label13: TLabel;
     DBEdit12: TDBEdit;
     Label14: TLabel;
-    DB_cadastro: TDBEdit;
-    Q_padraoRAZAO_SOCIAL: TStringField;
-    Label15: TLabel;
-    DB_razaoSocial: TDBEdit;
-    Bit_foto: TBitBtn;
-    Bit_limpaFoto: TBitBtn;
-    OpenDialog1: TOpenDialog;
-    procedure Bit_incluirClick(Sender: TObject);
+    DBEdit13: TDBEdit;
   private
     { Private declarations }
   public
@@ -71,14 +65,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TFrm_Empresa.Bit_incluirClick(Sender: TObject);
-begin
-  inherited;
-
-  DB_cadastro.Text := DatetoStr(now);
-  DB_razaoSocial.SetFocus;
-
-end;
 
 end.
