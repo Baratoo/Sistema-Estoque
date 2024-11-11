@@ -32,6 +32,9 @@ type
     procedure Bit_gravarClick(Sender: TObject);
     procedure Bit_cancelarClick(Sender: TObject);
     procedure Bit_atualizarClick(Sender: TObject);
+    procedure TrataBotoes();
+    procedure Bit_fecharClick(Sender: TObject);
+
   private
     { Private declarations }
   public
@@ -49,26 +52,28 @@ uses U_DM;
 
 procedure TFrm_padrao.Bit_alterarClick(Sender: TObject);
 begin
-
+    TrataBotoes;
     if MessageDlg('Deseja Alterar?',mtConfirmation,[mbOK, mbNO],0) = mrOk then
     begin
       Q_padrao.Edit;
     end
     else
+    TrataBotoes;
     abort;
 
 end;
 
 procedure TFrm_padrao.Bit_atualizarClick(Sender: TObject);
 begin
-
+  TrataBotoes;
   Q_padrao.Refresh;
+  MessageDlg('Registro atualizao!', mtInformation, [mbOK], 0);
 
 end;
 
 procedure TFrm_padrao.Bit_cancelarClick(Sender: TObject);
 begin
-
+  TrataBotoes;
   Q_padrao.Cancel;
   MessageDlg('Cancelado!', mtInformation, [mbOK], 0);
 
@@ -76,20 +81,27 @@ end;
 
 procedure TFrm_padrao.Bit_deletarClick(Sender: TObject);
 begin
-
+  TrataBotoes;
   if MessageDlg('Deseja deletar?',mtConfirmation,[mbOK, mbNO],0) = mrOk then
     begin
       Q_padrao.Delete;
       MessageDlg('Registro deletado com sucesso!', mtInformation, [mbOK], 0);
+      TrataBotoes;
     end
     else
+    TrataBotoes;
     abort;
 
 end;
 
+procedure TFrm_padrao.Bit_fecharClick(Sender: TObject);
+begin
+  close;
+end;
+
 procedure TFrm_padrao.Bit_gravarClick(Sender: TObject);
 begin
-
+  TrataBotoes;
   Q_padrao.Post;
   MessageDlg('Registro salvo', TMsgDlgType.mtInformation, [mbOK], 0);
 
@@ -97,6 +109,7 @@ end;
 
 procedure TFrm_padrao.Bit_incluirClick(Sender: TObject);
 begin
+  TrataBotoes;
   Q_padrao.Append;
 end;
 
@@ -108,6 +121,17 @@ begin
       Key:=#0;
       Perform(WM_NEXTDLGCTL, 0, 0);
     end;
+end;
+
+procedure TFrm_padrao.TrataBotoes;
+begin
+
+  Bit_incluir.Enabled := not Bit_incluir.Enabled;
+  Bit_deletar.Enabled := not Bit_deletar.Enabled;
+  Bit_alterar.Enabled := not Bit_alterar.Enabled;
+  Bit_gravar.Enabled := not Bit_gravar.Enabled;
+  Bit_atualizar.Enabled := not Bit_atualizar.Enabled;
+
 end;
 
 end.

@@ -114,6 +114,7 @@ object Frm_padrao: TFrm_padrao
       Caption = 'Fechar'
       Layout = blGlyphRight
       TabOrder = 7
+      OnClick = Bit_fecharClick
     end
   end
   object Panel2: TPanel
@@ -132,6 +133,7 @@ object Frm_padrao: TFrm_padrao
       Top = 8
       Width = 220
       Height = 25
+      DataSource = ds_padrao
       VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
       TabOrder = 0
     end

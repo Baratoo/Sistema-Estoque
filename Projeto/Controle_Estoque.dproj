@@ -111,7 +111,7 @@
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
         </DCCReference>
-        <DCCReference Include="..\Forms\Unit1.pas">
+        <DCCReference Include="..\Forms\U_Padrao.pas">
             <Form>Frm_padrao</Form>
             <FormType>dfm</FormType>
         </DCCReference>
