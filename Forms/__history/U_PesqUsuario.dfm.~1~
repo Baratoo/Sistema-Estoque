@@ -1,0 +1,4 @@
+inherited Frm_pesqUsuario: TFrm_pesqUsuario
+  Caption = 'PESQUISA DE USU'#193'RIOS'
+  TextHeight = 15
+end
