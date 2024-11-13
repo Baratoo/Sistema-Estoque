@@ -44,10 +44,13 @@ type
     procedure SpeedButton9Click(Sender: TObject);
     procedure abreTelaUsuario();
     procedure abreTelaEmpresa();
+    procedure abreTelaCliente();
     procedure Sbt_usuarioClick(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure Empresa1Click(Sender: TObject);
     procedure Usuario1Click(Sender: TObject);
+    procedure SpeedButton2Click(Sender: TObject);
+    procedure Cliente1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,7 +64,19 @@ implementation
 
 {$R *.dfm}
 
-uses U_Padrao, U_CadUsuario, U_Empresa;
+uses U_Padrao, U_CadUsuario, U_Empresa, U_Cliente;
+
+procedure TFrm_Principal.abreTelaCliente;
+begin
+  Frm_Cliente := TFrm_Cliente.Create(self);
+  Frm_Cliente.ShowModal;
+  try
+
+  finally
+    Frm_Cliente.Free;
+    Frm_Cliente := nil;
+  end;
+end;
 
 procedure TFrm_Principal.abreTelaEmpresa;
 begin
@@ -90,6 +105,11 @@ begin
 
 end;
 
+procedure TFrm_Principal.Cliente1Click(Sender: TObject);
+begin
+  abreTelaCliente;
+end;
+
 procedure TFrm_Principal.Empresa1Click(Sender: TObject);
 begin
   abreTelaEmpresa;
@@ -100,6 +120,11 @@ begin
 
   abreTelaUsuario;
 
+end;
+
+procedure TFrm_Principal.SpeedButton2Click(Sender: TObject);
+begin
+  abreTelaCliente;
 end;
 
 procedure TFrm_Principal.SpeedButton3Click(Sender: TObject);

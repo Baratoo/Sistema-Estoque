@@ -34,6 +34,7 @@ type
     procedure Bit_atualizarClick(Sender: TObject);
     procedure TrataBotoes();
     procedure Bit_fecharClick(Sender: TObject);
+    procedure Bit_pesquisarClick(Sender: TObject);
 
   private
     { Private declarations }
@@ -126,6 +127,11 @@ begin
       Q_padrao.Open;
       TrataBotoes;
       Q_padrao.Append;
+end;
+
+procedure TFrm_padrao.Bit_pesquisarClick(Sender: TObject);
+begin
+  Q_padrao.Open;
 end;
 
 procedure TFrm_padrao.FormKeyPress(Sender: TObject; var Key: Char);

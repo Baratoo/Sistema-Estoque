@@ -108,6 +108,7 @@ object Frm_padrao: TFrm_padrao
       Caption = 'Pesquisar'
       Layout = blGlyphRight
       TabOrder = 6
+      OnClick = Bit_pesquisarClick
     end
     object Bit_fechar: TBitBtn
       Left = 540

@@ -87,7 +87,6 @@ end;
 procedure TFrm_Empresa.Bit_incluirClick(Sender: TObject);
 begin
   inherited;
-
   DB_cadastro.Text := DatetoStr(now);
   DB_razaoSocial.SetFocus;
 
