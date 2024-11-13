@@ -43,7 +43,11 @@ type
     procedure Timer1Timer(Sender: TObject);
     procedure SpeedButton9Click(Sender: TObject);
     procedure abreTelaUsuario();
+    procedure abreTelaEmpresa();
     procedure Sbt_usuarioClick(Sender: TObject);
+    procedure SpeedButton3Click(Sender: TObject);
+    procedure Empresa1Click(Sender: TObject);
+    procedure Usuario1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -57,7 +61,19 @@ implementation
 
 {$R *.dfm}
 
-uses U_Padrao, U_CadUsuario;
+uses U_Padrao, U_CadUsuario, U_Empresa;
+
+procedure TFrm_Principal.abreTelaEmpresa;
+begin
+  Frm_Empresa := TFrm_Empresa.Create(self);
+  Frm_Empresa.ShowModal;
+  try
+
+  finally
+    Frm_Empresa.Free;
+    Frm_Empresa:= nil;
+  end;
+end;
 
 procedure TFrm_Principal.abreTelaUsuario;
 begin
@@ -74,11 +90,21 @@ begin
 
 end;
 
+procedure TFrm_Principal.Empresa1Click(Sender: TObject);
+begin
+  abreTelaEmpresa;
+end;
+
 procedure TFrm_Principal.Sbt_usuarioClick(Sender: TObject);
 begin
 
   abreTelaUsuario;
 
+end;
+
+procedure TFrm_Principal.SpeedButton3Click(Sender: TObject);
+begin
+  abreTelaEmpresa;
 end;
 
 procedure TFrm_Principal.SpeedButton9Click(Sender: TObject);
@@ -95,6 +121,11 @@ begin
   StatusBar1.Panels[0].Text:= DateToStr(now);
   StatusBar1.Panels[1].Text:= TimeToStr(now);
   StatusBar1.Panels[2].Text:= 'SISTEMA TESTE';
+end;
+
+procedure TFrm_Principal.Usuario1Click(Sender: TObject);
+begin
+  abreTelaUsuario;
 end;
 
 end.

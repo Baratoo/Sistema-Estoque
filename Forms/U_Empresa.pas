@@ -59,6 +59,8 @@ type
     Bit_limpaFoto: TBitBtn;
     OpenDialog1: TOpenDialog;
     procedure Bit_incluirClick(Sender: TObject);
+    procedure Bit_fotoClick(Sender: TObject);
+    procedure Bit_limpaFotoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -72,12 +74,31 @@ implementation
 
 {$R *.dfm}
 
+procedure TFrm_Empresa.Bit_fotoClick(Sender: TObject);
+begin
+  Q_padrao.Edit;
+  OpenDialog1.Execute;
+  DBImg_foto.Picture.LoadFromFile(OpenDialog1.FileName);
+  Q_padrao.Refresh;
+  MessageDlg('Imagem inserida com sucesso!', mtInformation, [mbOK], 0);
+
+end;
+
 procedure TFrm_Empresa.Bit_incluirClick(Sender: TObject);
 begin
   inherited;
 
   DB_cadastro.Text := DatetoStr(now);
   DB_razaoSocial.SetFocus;
+
+end;
+
+procedure TFrm_Empresa.Bit_limpaFotoClick(Sender: TObject);
+begin
+  Q_padrao.Edit;
+  Q_padraoLOGO.AsVariant := null;
+  Q_padrao.Refresh;
+  MessageDlg('Imagem deletada!', mtInformation, [mbOK], 0);
 
 end;
 

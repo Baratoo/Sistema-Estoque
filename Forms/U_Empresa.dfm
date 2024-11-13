@@ -1,7 +1,6 @@
 inherited Frm_Empresa: TFrm_Empresa
   Caption = 'CADASTRO DE EMPRESA'
   ClientHeight = 562
-  ClientWidth = 624
   ExplicitWidth = 636
   ExplicitHeight = 600
   TextHeight = 15
@@ -118,14 +117,14 @@ inherited Frm_Empresa: TFrm_Empresa
     FocusControl = DB_razaoSocial
   end
   inherited Panel1: TPanel
-    Width = 624
     TabOrder = 11
+    ExplicitWidth = 620
   end
   inherited Panel2: TPanel
     Top = 512
-    Width = 624
     TabOrder = 12
-    ExplicitTop = 439
+    ExplicitTop = 511
+    ExplicitWidth = 620
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -236,6 +235,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Height = 105
     DataField = 'LOGO'
     DataSource = ds_padrao
+    Stretch = True
     TabOrder = 13
   end
   object DBEdit12: TDBEdit [28]
@@ -273,6 +273,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Height = 25
     Caption = 'Foto'
     TabOrder = 17
+    OnClick = Bit_fotoClick
   end
   object Bit_limpaFoto: TBitBtn [32]
     Left = 519
@@ -281,6 +282,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Height = 25
     Caption = 'Limpa'
     TabOrder = 18
+    OnClick = Bit_limpaFotoClick
   end
   inherited Q_padrao: TFDQuery
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
