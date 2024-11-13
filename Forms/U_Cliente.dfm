@@ -99,8 +99,12 @@ inherited Frm_Cliente: TFrm_Cliente
     Caption = 'CADASTRO'
     FocusControl = DB_cadastro
   end
+  inherited Panel1: TPanel
+    TabOrder = 10
+  end
   inherited Panel2: TPanel
     Top = 512
+    TabOrder = 11
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -112,7 +116,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'ID_CLIENTE'
     DataSource = ds_padrao
-    TabOrder = 2
+    TabOrder = 12
   end
   object DB_nome: TDBEdit [15]
     Left = 18
@@ -121,7 +125,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'NOME'
     DataSource = ds_padrao
-    TabOrder = 3
+    TabOrder = 0
   end
   object DB_endereco: TDBEdit [16]
     Left = 18
@@ -130,7 +134,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'ENDERECO'
     DataSource = ds_padrao
-    TabOrder = 4
+    TabOrder = 1
   end
   object DB_numero: TDBEdit [17]
     Left = 388
@@ -139,7 +143,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'NUMERO'
     DataSource = ds_padrao
-    TabOrder = 5
+    TabOrder = 2
   end
   object DB_bairro: TDBEdit [18]
     Left = 18
@@ -148,7 +152,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'BAIRRO'
     DataSource = ds_padrao
-    TabOrder = 6
+    TabOrder = 3
   end
   object DB_cidade: TDBEdit [19]
     Left = 18
@@ -157,7 +161,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'CIDADE'
     DataSource = ds_padrao
-    TabOrder = 7
+    TabOrder = 5
   end
   object DB_uf: TDBEdit [20]
     Left = 388
@@ -166,7 +170,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'UF'
     DataSource = ds_padrao
-    TabOrder = 8
+    TabOrder = 4
   end
   object DB_cep: TDBEdit [21]
     Left = 388
@@ -175,7 +179,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'CEP'
     DataSource = ds_padrao
-    TabOrder = 9
+    TabOrder = 6
   end
   object DB_telefone: TDBEdit [22]
     Left = 18
@@ -184,7 +188,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'TELEFONE'
     DataSource = ds_padrao
-    TabOrder = 10
+    TabOrder = 7
   end
   object DB_cpf: TDBEdit [23]
     Left = 290
@@ -193,7 +197,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'CPF'
     DataSource = ds_padrao
-    TabOrder = 11
+    TabOrder = 8
   end
   object DB_email: TDBEdit [24]
     Left = 18
@@ -202,7 +206,7 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'EMAIL'
     DataSource = ds_padrao
-    TabOrder = 12
+    TabOrder = 9
   end
   object DB_cadastro: TDBEdit [25]
     Left = 210
@@ -211,10 +215,12 @@ inherited Frm_Cliente: TFrm_Cliente
     Height = 23
     DataField = 'CADASTRO'
     DataSource = ds_padrao
+    Enabled = False
     TabOrder = 13
   end
   inherited Q_padrao: TFDQuery
-    UpdateOptions.AssignedValues = [uvGeneratorName]
+    UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
+    UpdateOptions.FetchGeneratorsPoint = gpImmediate
     UpdateOptions.GeneratorName = 'GEN_ID_CLIENTE'
     UpdateOptions.AutoIncFields = 'ID_CLIENTE'
     SQL.Strings = (
