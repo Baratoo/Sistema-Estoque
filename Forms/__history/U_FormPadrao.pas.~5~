@@ -1,0 +1,39 @@
+unit U_FormPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Mask, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons;
+
+type
+  TFrm_formPadrao = class(TForm)
+    Panel1: TPanel;
+    CB_chave: TComboBox;
+    Label1: TLabel;
+    Edt_nome: TEdit;
+    MK_inicio: TMaskEdit;
+    MK_fim: TMaskEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitBtn3: TBitBtn;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_formPadrao: TFrm_formPadrao;
+
+implementation
+
+{$R *.dfm}
+
+end.
