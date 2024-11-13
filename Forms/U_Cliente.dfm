@@ -1,14 +1,15 @@
 inherited Frm_Cliente: TFrm_Cliente
   Caption = 'CADASTRO DE CLIENTE'
-  ClientHeight = 562
-  ExplicitHeight = 600
+  ClientHeight = 492
+  ExplicitTop = -116
+  ExplicitHeight = 530
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 18
-    Top = 88
-    Width = 60
+    Top = 83
+    Width = 11
     Height = 15
-    Caption = 'ID_CLIENTE'
+    Caption = 'ID'
     FocusControl = DBEdit1
   end
   object Label2: TLabel [1]
@@ -103,7 +104,7 @@ inherited Frm_Cliente: TFrm_Cliente
     TabOrder = 10
   end
   inherited Panel2: TPanel
-    Top = 512
+    Top = 442
     TabOrder = 11
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()

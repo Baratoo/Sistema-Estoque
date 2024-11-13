@@ -1,9 +1,0 @@
-inherited Frm_Cliente: TFrm_Cliente
-  Caption = 'CADASTRO DE CLIENTE'
-  TextHeight = 15
-  inherited Panel2: TPanel
-    inherited DBNavigator1: TDBNavigator
-      Hints.Strings = ()
-    end
-  end
-end

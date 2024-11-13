@@ -3207,6 +3207,7 @@ object Frm_Principal: TFrm_Principal
         0000000000000000000000000000000000000000000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton6Click
     end
     object SpeedButton7: TSpeedButton
       Left = 598
@@ -4972,6 +4973,7 @@ object Frm_Principal: TFrm_Principal
       end
       object Produto2: TMenuItem
         Caption = 'Forma de Pgmt'
+        OnClick = Produto2Click
       end
     end
     object Movimento1: TMenuItem

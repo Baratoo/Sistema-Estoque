@@ -1,23 +1,24 @@
 inherited Frm_Empresa: TFrm_Empresa
   Caption = 'CADASTRO DE EMPRESA'
   ClientHeight = 562
+  ClientWidth = 624
   ExplicitWidth = 636
   ExplicitHeight = 600
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 32
     Top = 96
-    Width = 67
+    Width = 11
     Height = 15
-    Caption = 'ID_EMPRESA'
+    Caption = 'ID'
     FocusControl = DBEdit1
   end
   object Label2: TLabel [1]
     Left = 32
     Top = 186
-    Width = 66
+    Width = 90
     Height = 15
-    Caption = 'N_FANTASIA'
+    Caption = 'NOME FANTASIA'
     FocusControl = DB_nFantasia
   end
   object Label3: TLabel [2]
@@ -111,17 +112,19 @@ inherited Frm_Empresa: TFrm_Empresa
   object Label15: TLabel [13]
     Left = 32
     Top = 141
-    Width = 84
+    Width = 82
     Height = 15
-    Caption = 'RAZAO_SOCIAL'
+    Caption = 'RAZAO SOCIAL'
     FocusControl = DB_razaoSocial
   end
   inherited Panel1: TPanel
+    Width = 624
     TabOrder = 11
     ExplicitWidth = 620
   end
   inherited Panel2: TPanel
     Top = 512
+    Width = 624
     TabOrder = 12
     ExplicitTop = 511
     ExplicitWidth = 620

@@ -1,14 +1,12 @@
 inherited Frm_Produto: TFrm_Produto
   Caption = 'CADASTRO DE PRODUTOS'
-  ClientHeight = 362
-  ExplicitHeight = 400
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 32
     Top = 96
-    Width = 69
+    Width = 11
     Height = 15
-    Caption = 'ID_PRODUTO'
+    Caption = 'ID'
     FocusControl = DBEdit1
   end
   object Label2: TLabel [1]
@@ -38,9 +36,9 @@ inherited Frm_Produto: TFrm_Produto
   object Label5: TLabel [4]
     Left = 302
     Top = 240
-    Width = 77
+    Width = 98
     Height = 15
-    Caption = 'ESTOQUE_MIN'
+    Caption = 'ESTOQUE MINIMO'
     FocusControl = DB_estoqueMin
   end
   object Label6: TLabel [5]
@@ -70,7 +68,6 @@ inherited Frm_Produto: TFrm_Produto
     TabOrder = 6
   end
   inherited Panel2: TPanel
-    Top = 312
     TabOrder = 7
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()

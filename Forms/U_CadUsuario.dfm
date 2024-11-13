@@ -8,9 +8,9 @@ inherited Frm_usuario: TFrm_usuario
   object Label1: TLabel [0]
     Left = 8
     Top = 88
-    Width = 65
+    Width = 11
     Height = 15
-    Caption = 'ID_USUARIO'
+    Caption = 'ID'
     FocusControl = DBEdit1
   end
   object Label2: TLabel [1]
@@ -53,7 +53,7 @@ inherited Frm_usuario: TFrm_usuario
     Top = 442
     Width = 624
     TabOrder = 5
-    ExplicitTop = 390
+    ExplicitTop = 441
     ExplicitWidth = 620
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()

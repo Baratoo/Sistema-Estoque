@@ -1,0 +1,9 @@
+inherited Frm_FormaPgmt: TFrm_FormaPgmt
+  Caption = 'CADASTRO DE FORMA DE PAGAMENTO'
+  TextHeight = 15
+  inherited Panel2: TPanel
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end
