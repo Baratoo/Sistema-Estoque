@@ -55,8 +55,8 @@ end;
 
 procedure TFrm_usuario.Bit_pesquisarClick(Sender: TObject);
 begin
-  Frm_pesqUsuario := TFrm_pesqUsuario.Create(self);
-  Frm_pesqUsuario.ShowModal;
+  Frm_pesqUsuario := TFrm_pesqUsuario;
+  Frm_usuario.ShowModal;
   try
 
   finally

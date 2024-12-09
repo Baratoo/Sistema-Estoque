@@ -28,7 +28,6 @@ type
     DB_cadastro: TDBEdit;
     DB_tipo: TDBComboBox;
     procedure Bit_incluirClick(Sender: TObject);
-    procedure Bit_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,9 +39,6 @@ var
 
 implementation
 
-uses
-  U_PesqUsuario;
-
 {$R *.dfm}
 
 procedure TFrm_usuario.Bit_incluirClick(Sender: TObject);
@@ -50,19 +46,6 @@ begin
   inherited; //Herança da tela padrão!
   DB_cadastro.Text := Datetostr(now);
   DB_nome.SetFocus;
-
-end;
-
-procedure TFrm_usuario.Bit_pesquisarClick(Sender: TObject);
-begin
-  Frm_pesqUsuario := TFrm_pesqUsuario.Create(self);
-  Frm_pesqUsuario.ShowModal;
-  try
-
-  finally
-    Frm_pesqUsuario.Free;
-    Frm_pesqUsuario := nil;
-  end;
 
 end;
 

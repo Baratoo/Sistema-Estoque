@@ -42,7 +42,7 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       end>
   end
   inherited Q_pesqPadrao: TFDQuery
-    Transaction = DM.transacao
+    Active = True
     SQL.Strings = (
       'SELECT '
       '  ID_USUARIO,'
@@ -52,8 +52,6 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       '  '
       '  FROM USUARIO'
       '  ORDER BY ID_USUARIO')
-    Left = 576
-    Top = 208
     object Q_pesqPadraoID_USUARIO: TIntegerField
       FieldName = 'ID_USUARIO'
       Origin = 'ID_USUARIO'

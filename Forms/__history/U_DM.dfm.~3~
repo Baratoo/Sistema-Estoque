@@ -1,19 +1,16 @@
 object DM: TDM
-  OldCreateOrder = True
   Height = 480
   Width = 640
   object conexao: TFDConnection
     Params.Strings = (
-      'Database=C:\ESTOQUE.FDB'
+      'Database=C:\T_Kaique\XE\BANCO\ESTOQUE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
       'Server=localhost'
       'CharacterSet=WIN1252'
-      'Port=3050'
       'DriverID=FB')
     LoginPrompt = False
-    Transaction = transacao
     Left = 88
     Top = 112
   end

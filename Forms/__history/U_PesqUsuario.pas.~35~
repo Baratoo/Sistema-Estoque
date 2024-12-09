@@ -46,7 +46,7 @@ begin
       Q_pesqPadrao.ParamByName('ID_USUARIO').AsString := Edt_nome.Text;
     end;
     1:begin
-      Q_pesqPadrao.SQL.Add('WHERE NOME LIKE :NOME');
+      Q_pesqPadrao.SQL.Add('WHERE LIKE :NOME');
       Q_pesqPadrao.ParamByName('NOME').AsString := '%' + Edt_nome.Text + '%';
     end;
   end;

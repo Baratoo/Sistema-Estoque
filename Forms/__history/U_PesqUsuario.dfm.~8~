@@ -42,7 +42,7 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       end>
   end
   inherited Q_pesqPadrao: TFDQuery
-    Transaction = DM.transacao
+    Active = True
     SQL.Strings = (
       'SELECT '
       '  ID_USUARIO,'

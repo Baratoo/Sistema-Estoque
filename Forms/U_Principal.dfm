@@ -11,7 +11,9 @@ object Frm_Principal: TFrm_Principal
   Font.Name = 'Segoe UI'
   Font.Style = []
   Menu = MainMenu1
+  OldCreateOrder = True
   WindowState = wsMaximized
+  PixelsPerInch = 96
   TextHeight = 15
   object Panel1: TPanel
     Left = 0
@@ -22,7 +24,6 @@ object Frm_Principal: TFrm_Principal
     Color = clMedGray
     ParentBackground = False
     TabOrder = 0
-    ExplicitWidth = 984
     object Sbt_usuario: TSpeedButton
       Left = -7
       Top = 0
@@ -4938,8 +4939,6 @@ object Frm_Principal: TFrm_Principal
       item
         Width = 50
       end>
-    ExplicitTop = 422
-    ExplicitWidth = 984
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer

@@ -29,6 +29,9 @@ var
 
 implementation
 
+uses
+  U_DM;
+
 {$R *.dfm}
 
 procedure TFrm_pesqUsuario.Bit_pesquisarClick(Sender: TObject);
@@ -36,8 +39,14 @@ begin
   Q_pesqPadrao.Close;
   Q_pesqPadrao.SQL.Clear;
   Q_pesqPadrao.SQL.Add('SELECT ID_USUARIO, NOME, TIPO, CADASTRO FROM USUARIO');
-  Q_pesqPadrao.SQL.Add('WHERE ID_USUARIO := PID_USUARIO');
-  Q_pesqPadrao.ParamByName('PID_USUARIO').AsString := Edt_nome.Text;
+
+  case CB_chave.ItemIndex of
+    0:begin
+      Q_pesqPadrao.SQL.Add('WHERE ID_USUARIO = :ID_USUARIO');
+      Q_pesqPadrao.ParamByName('ID_USUARIO').AsString := Edt_nome.Text;
+    end;
+  end;
+
   Q_pesqPadrao.Open;
 
   if Q_pesqPadrao.IsEmpty then
@@ -57,6 +66,39 @@ begin
       Edt_nome.SetFocus;
       MK_inicio.Visible := false;
       MK_fim.Visible := false;
+      Label2.Visible := True;
+      Label3.Visible := False;
+      Label4.Visible := False;
+    end;
+
+    1:begin
+      Edt_nome.Visible := true;
+      Edt_nome.SetFocus;
+      MK_inicio.Visible := false;
+      MK_fim.Visible := false;
+      Label2.Visible := True;
+      Label3.Visible := False;
+      Label4.Visible := False;
+    end;
+
+    2:begin
+      Edt_nome.Visible := false;
+      MK_inicio.SetFocus;
+      MK_inicio.Visible := true;
+      MK_fim.Visible := false;
+      Label2.Visible := False;
+      Label4.Visible := False;
+      Label3.Visible := True;
+    end;
+
+    3:begin
+      Edt_nome.Visible := false;
+      MK_inicio.SetFocus;
+      MK_inicio.Visible := true;
+      MK_fim.Visible := true;
+      Label2.Visible := False;
+      Label3.Visible := true;
+      Label4.Visible := True;
     end;
   end;
 

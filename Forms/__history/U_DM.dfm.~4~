@@ -4,7 +4,7 @@ object DM: TDM
   Width = 640
   object conexao: TFDConnection
     Params.Strings = (
-      'Database=C:\ESTOQUE.FDB'
+      'Database=C:\Users\Win7\Documents\ESTOQUE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
@@ -12,6 +12,7 @@ object DM: TDM
       'CharacterSet=WIN1252'
       'Port=3050'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Transaction = transacao
     Left = 88

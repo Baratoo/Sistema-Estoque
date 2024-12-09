@@ -45,10 +45,6 @@ begin
       Q_pesqPadrao.SQL.Add('WHERE ID_USUARIO = :ID_USUARIO');
       Q_pesqPadrao.ParamByName('ID_USUARIO').AsString := Edt_nome.Text;
     end;
-    1:begin
-      Q_pesqPadrao.SQL.Add('WHERE NOME LIKE :NOME');
-      Q_pesqPadrao.ParamByName('NOME').AsString := '%' + Edt_nome.Text + '%';
-    end;
   end;
 
   Q_pesqPadrao.Open;
@@ -97,10 +93,10 @@ begin
 
     3:begin
       Edt_nome.Visible := false;
-      Label2.Visible := False;
       MK_inicio.SetFocus;
       MK_inicio.Visible := true;
       MK_fim.Visible := true;
+      Label2.Visible := False;
       Label3.Visible := true;
       Label4.Visible := True;
     end;
