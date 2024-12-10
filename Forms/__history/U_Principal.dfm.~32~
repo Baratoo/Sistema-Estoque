@@ -2145,6 +2145,7 @@ object Frm_Principal: TFrm_Principal
         0000000000000000000000000000000000000000000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton4Click
     end
     object SpeedButton5: TSpeedButton
       Left = 399
@@ -2675,6 +2676,7 @@ object Frm_Principal: TFrm_Principal
         0000000000000000000000000000000000000000000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton5Click
     end
     object SpeedButton6: TSpeedButton
       Left = 498
@@ -3205,6 +3207,7 @@ object Frm_Principal: TFrm_Principal
         0000000000000000000000000000000000000000000000000000}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton6Click
     end
     object SpeedButton7: TSpeedButton
       Left = 598
@@ -3327,6 +3330,7 @@ object Frm_Principal: TFrm_Principal
         1E1E1E1E5F0443FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
+      OnClick = SpeedButton7Click
     end
     object SpeedButton8: TSpeedButton
       Left = 698
@@ -4958,15 +4962,19 @@ object Frm_Principal: TFrm_Principal
       end
       object Cliente1: TMenuItem
         Caption = 'Cliente'
+        OnClick = Cliente1Click
       end
       object Fornecedor1: TMenuItem
         Caption = 'Fornecedor'
+        OnClick = Fornecedor1Click
       end
       object Produto1: TMenuItem
         Caption = 'Produto'
+        OnClick = Produto1Click
       end
       object Produto2: TMenuItem
         Caption = 'Forma de Pgmt'
+        OnClick = Produto2Click
       end
     end
     object Movimento1: TMenuItem
