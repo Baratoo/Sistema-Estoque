@@ -22,20 +22,28 @@ type
     Label1: TLabel;
     DBEdit1: TDBEdit;
     Label2: TLabel;
-    DBEdit2: TDBEdit;
+    DB_vlrCusto: TDBEdit;
     Label3: TLabel;
-    DBEdit3: TDBEdit;
+    DB_vlrVenda: TDBEdit;
     Label4: TLabel;
-    DBEdit4: TDBEdit;
+    DB_estoque: TDBEdit;
     Label5: TLabel;
-    DBEdit5: TDBEdit;
+    DB_estoqueMin: TDBEdit;
     Label6: TLabel;
-    DBEdit6: TDBEdit;
     Label7: TLabel;
-    DBEdit7: TDBEdit;
+    DB_cadastro: TDBEdit;
     Q_padraoPRODUTO_DESCRICAO: TStringField;
     Label8: TLabel;
-    DBEdit8: TDBEdit;
+    DB_descricao: TDBEdit;
+    DB_unidade: TDBComboBox;
+    Q_padraoID_FORNECEDOR: TIntegerField;
+    Q_padraoNOME: TStringField;
+    Label9: TLabel;
+    DB_codForn: TDBEdit;
+    Label10: TLabel;
+    DB_nomeForn: TDBEdit;
+    procedure Bit_incluirClick(Sender: TObject);
+    procedure Bit_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,5 +56,28 @@ var
 implementation
 
 {$R *.dfm}
+
+uses U_pesqProdutos;
+
+procedure TFrm_Produto.Bit_incluirClick(Sender: TObject);
+begin
+  inherited;
+  DB_cadastro.Text := DateToStr(now);
+  DB_descricao.SetFocus;
+
+end;
+
+procedure TFrm_Produto.Bit_pesquisarClick(Sender: TObject);
+begin
+  Frm_pesqProdutos := TFrm_Produto.Create(self);
+  Frm_pesqProdutos.ShowModal;
+  try
+
+  finally
+    Frm_pesqProdutos.Free;
+    Frm_pesqProdutos := nil;
+  end;
+
+end;
 
 end.

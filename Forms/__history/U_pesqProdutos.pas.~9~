@@ -35,35 +35,35 @@ begin
     Close;
     SQL.Clear;
     SQL.Add(' select P.ID_PRODUTO, P.PRODUTO_DESCRICAO, P.VL_CUSTO, P.VL_VENDA, ');
-    SQL.Add(' P.ESTOQUE, P.ESTOQUE_MIN, P.UNIDADE, P.CADASTRO, P.ID_FORNECEDOR, F.NOME ');
-    SQL.Add(' FROM PRODUTO P ');
+    SQL.Add(' P.ESTOQUE, P.ESTOQUE_MIN, P.UNIDADE, P.CADASTRO, P.ID_FORNECEDOR, F.NOME');
+    SQL.Add(' FROM PRODUTO P');
     SQL.Add(' INNER JOIN FORNECEDOR F ');
-    SQL.Add(' ON F.ID_FORNECEDOR = P.ID_FORNECEDOR ');
+    SQL.Add(' ON F.ID_FORNECEDOR = P.ID_FORNECEDOR');
 
     case CB_chave.ItemIndex of
     0:begin
-        SQL.Add(' WHERE P.ID_PRODUTO = :ID_PRODUTO ');
+        SQL.Add('WHERE P.ID_PRODUTO = :ID_PRODUTO');
         ParamByName('ID_PRODUTO').AsString := Edt_nome.Text;
       end;
     1:begin
-        SQL.Add(' WHERE P.PRODUTO_DESCRICAO LIKE :NOME ');
+        SQL.Add('WHERE P.PRODUTO_DESCRICAO LIKE :NOME');
         ParamByName('NOME').AsString := '%' + Edt_nome.Text + '%';
       end;
     2:begin
-        SQL.Add(' WHERE P.CADASTRO = :CADASTRO ');
+        SQL.Add('WHERE P.CADASTRO = :CADASTRO');
         ParamByName('CADASTRO').AsDate := StrToDate(MK_inicio.Text);
       end;
     3:begin
-        SQL.Add(' WHERE P.CADASTRO BETWEEN :INICIO AND :FIM ');
+        SQL.Add('WHERE P.CADASTRO BETWEEN :INICIO AND :FIM');
         ParamByName('INICIO').AsDate := StrToDate(MK_inicio.Text);
         ParamByName('FIM').AsDate := StrToDate(MK_fim.Text);
       end;
     4:begin
-        SQL.Add(' ORDER BY P.PRODUTO_DESCRICAO ');
+        SQL.Add(' ORDER BY P.NOME ');
       end;
     5:begin
-        SQL.Add(' WHERE P.ID_FORNECEDOR = :ID_FORNECEDOR ');
-        ParamByName('ID_FORNECEDOR').AsString := Edt_nome.Text;
+        SQL.Add(' WHERE A.ID_FORNECEDOR = :ID_FORNECEDOR');
+        ParamByName('ID_FORNECEDOR').AsString := Edt_nome.Text
       end;
     end;
 

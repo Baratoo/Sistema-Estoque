@@ -3,15 +3,6 @@ inherited Frm_pesqProdutos: TFrm_pesqProdutos
   TextHeight = 15
   inherited Panel1: TPanel
     ExplicitWidth = 1284
-    inherited CB_chave: TComboBox
-      Items.Strings = (
-        'C'#211'DIGO'
-        'NOME'
-        'CADASTRO'
-        'PER'#205'ODO'
-        'TODOS'
-        'FORNECEDOR')
-    end
     inherited MK_inicio: TMaskEdit
       Width = 53
       EditMask = '!99/99/0000;1;_'

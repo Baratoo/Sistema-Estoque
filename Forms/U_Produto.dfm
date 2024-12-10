@@ -64,6 +64,22 @@ inherited Frm_Produto: TFrm_Produto
     Caption = 'NOME DO PRODUTO'
     FocusControl = DB_descricao
   end
+  object Label9: TLabel [8]
+    Left = 32
+    Top = 291
+    Width = 91
+    Height = 15
+    Caption = 'ID_FORNECEDOR'
+    FocusControl = DB_codForn
+  end
+  object Label10: TLabel [9]
+    Left = 208
+    Top = 291
+    Width = 35
+    Height = 15
+    Caption = 'NOME'
+    FocusControl = DB_nomeForn
+  end
   inherited Panel1: TPanel
     TabOrder = 6
   end
@@ -73,7 +89,7 @@ inherited Frm_Produto: TFrm_Produto
       Hints.Strings = ()
     end
   end
-  object DBEdit1: TDBEdit [10]
+  object DBEdit1: TDBEdit [12]
     Left = 32
     Top = 112
     Width = 154
@@ -82,7 +98,7 @@ inherited Frm_Produto: TFrm_Produto
     DataSource = ds_padrao
     TabOrder = 8
   end
-  object DB_vlrCusto: TDBEdit [11]
+  object DB_vlrCusto: TDBEdit [13]
     Left = 32
     Top = 211
     Width = 200
@@ -91,7 +107,7 @@ inherited Frm_Produto: TFrm_Produto
     DataSource = ds_padrao
     TabOrder = 2
   end
-  object DB_vlrVenda: TDBEdit [12]
+  object DB_vlrVenda: TDBEdit [14]
     Left = 302
     Top = 211
     Width = 200
@@ -100,7 +116,7 @@ inherited Frm_Produto: TFrm_Produto
     DataSource = ds_padrao
     TabOrder = 3
   end
-  object DB_estoque: TDBEdit [13]
+  object DB_estoque: TDBEdit [15]
     Left = 32
     Top = 256
     Width = 200
@@ -109,7 +125,7 @@ inherited Frm_Produto: TFrm_Produto
     DataSource = ds_padrao
     TabOrder = 4
   end
-  object DB_estoqueMin: TDBEdit [14]
+  object DB_estoqueMin: TDBEdit [16]
     Left = 302
     Top = 256
     Width = 200
@@ -118,7 +134,7 @@ inherited Frm_Produto: TFrm_Produto
     DataSource = ds_padrao
     TabOrder = 5
   end
-  object DB_cadastro: TDBEdit [15]
+  object DB_cadastro: TDBEdit [17]
     Left = 228
     Top = 112
     Width = 154
@@ -128,7 +144,7 @@ inherited Frm_Produto: TFrm_Produto
     Enabled = False
     TabOrder = 9
   end
-  object DB_descricao: TDBEdit [16]
+  object DB_descricao: TDBEdit [18]
     Left = 32
     Top = 163
     Width = 350
@@ -138,7 +154,7 @@ inherited Frm_Produto: TFrm_Produto
     DataSource = ds_padrao
     TabOrder = 0
   end
-  object DB_unidade: TDBComboBox [17]
+  object DB_unidade: TDBComboBox [19]
     Left = 408
     Top = 165
     Width = 94
@@ -152,6 +168,24 @@ inherited Frm_Produto: TFrm_Produto
       'Un')
     TabOrder = 1
   end
+  object DB_codForn: TDBEdit [20]
+    Left = 32
+    Top = 312
+    Width = 154
+    Height = 23
+    DataField = 'ID_FORNECEDOR'
+    DataSource = ds_padrao
+    TabOrder = 10
+  end
+  object DB_nomeForn: TDBEdit [21]
+    Left = 208
+    Top = 312
+    Width = 294
+    Height = 23
+    DataField = 'NOME'
+    DataSource = ds_padrao
+    TabOrder = 11
+  end
   inherited Q_padrao: TFDQuery
     UpdateOptions.AssignedValues = [uvFetchGeneratorsPoint, uvGeneratorName]
     UpdateOptions.FetchGeneratorsPoint = gpImmediate
@@ -159,17 +193,18 @@ inherited Frm_Produto: TFrm_Produto
     UpdateOptions.AutoIncFields = 'ID_PRODUTO'
     SQL.Strings = (
       'select '
-      '  ID_PRODUTO,'
-      '  PRODUTO_DESCRICAO,'
-      '  VL_CUSTO,'
-      '  VL_VENDA,'
-      '  ESTOQUE,'
-      '  ESTOQUE_MIN,'
-      '  UNIDADE,'
-      '  CADASTRO'
-      '  '
-      '  FROM PRODUTO'
-      '  ORDER BY ID_PRODUTO')
+      '  P.ID_PRODUTO,'
+      '  P.PRODUTO_DESCRICAO,'
+      '  P.VL_CUSTO,'
+      '  P.VL_VENDA,'
+      '  P.ESTOQUE,'
+      '  P.ESTOQUE_MIN,'
+      '  P.UNIDADE,'
+      '  P.CADASTRO,'
+      '  P.ID_FORNECEDOR,'
+      '  F.NOME'
+      '  FROM PRODUTO P, FORNECEDOR F'
+      '  WHERE F.ID_FORNECEDOR = P.ID_FORNECEDOR')
     object Q_padraoID_PRODUTO: TFDAutoIncField
       FieldName = 'ID_PRODUTO'
       Origin = 'ID_PRODUTO'
@@ -220,6 +255,19 @@ inherited Frm_Produto: TFrm_Produto
       FieldName = 'PRODUTO_DESCRICAO'
       Origin = 'PRODUTO_DESCRICAO'
       Required = True
+      Size = 100
+    end
+    object Q_padraoID_FORNECEDOR: TIntegerField
+      FieldName = 'ID_FORNECEDOR'
+      Origin = 'ID_FORNECEDOR'
+      Required = True
+    end
+    object Q_padraoNOME: TStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'NOME'
+      Origin = 'NOME'
+      ProviderFlags = []
+      ReadOnly = True
       Size = 100
     end
   end

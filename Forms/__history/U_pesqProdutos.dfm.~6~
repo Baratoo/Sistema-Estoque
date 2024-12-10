@@ -9,7 +9,6 @@ inherited Frm_pesqProdutos: TFrm_pesqProdutos
         'NOME'
         'CADASTRO'
         'PER'#205'ODO'
-        'TODOS'
         'FORNECEDOR')
     end
     inherited MK_inicio: TMaskEdit
