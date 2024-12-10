@@ -1,0 +1,4 @@
+inherited Frm_formPadrao1: TFrm_formPadrao1
+  Caption = 'Frm_formPadrao1'
+  TextHeight = 15
+end

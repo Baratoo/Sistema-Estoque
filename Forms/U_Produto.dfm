@@ -133,6 +133,7 @@ inherited Frm_Produto: TFrm_Produto
     Top = 163
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'PRODUTO_DESCRICAO'
     DataSource = ds_padrao
     TabOrder = 0
@@ -173,6 +174,7 @@ inherited Frm_Produto: TFrm_Produto
       FieldName = 'ID_PRODUTO'
       Origin = 'ID_PRODUTO'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object Q_padraoVL_CUSTO: TFMTBCDField
       FieldName = 'VL_CUSTO'

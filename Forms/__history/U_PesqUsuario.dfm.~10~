@@ -1,14 +1,12 @@
 inherited Frm_pesqUsuario: TFrm_pesqUsuario
   Caption = 'PESQUISA DE USU'#193'RIOS'
-  ClientWidth = 709
-  ExplicitWidth = 721
+  PixelsPerInch = 96
   TextHeight = 15
   inherited Panel1: TPanel
-    Width = 709
     inherited Label2: TLabel
-      Width = 146
+      Width = 147
       Caption = 'PARAMETRO P/ PESQUISA'
-      ExplicitWidth = 146
+      ExplicitWidth = 147
     end
     inherited CB_chave: TComboBox
       OnChange = CB_chaveChange
@@ -17,11 +15,7 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       OnClick = Bit_pesquisarClick
     end
   end
-  inherited Panel2: TPanel
-    Width = 709
-  end
   inherited DBGrid1: TDBGrid
-    Width = 709
     DataSource = DS_pesqPadrao
     Columns = <
       item

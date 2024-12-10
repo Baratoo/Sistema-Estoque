@@ -1,7 +1,7 @@
 inherited Frm_Fornecedor: TFrm_Fornecedor
   Caption = 'CADASTRO DE FORNECEDORES'
   ClientHeight = 505
-  ExplicitTop = -59
+  ExplicitWidth = 636
   ExplicitHeight = 543
   TextHeight = 15
   object Label1: TLabel [0]
@@ -102,10 +102,13 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
   end
   inherited Panel1: TPanel
     TabOrder = 10
+    ExplicitWidth = 620
   end
   inherited Panel2: TPanel
     Top = 455
     TabOrder = 11
+    ExplicitTop = 454
+    ExplicitWidth = 620
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
