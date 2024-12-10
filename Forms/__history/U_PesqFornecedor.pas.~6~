@@ -26,7 +26,6 @@ type
     Q_pesqPadraoCADASTRO: TDateField;
     procedure Bit_pesquisarClick(Sender: TObject);
     procedure Bit_transferirClick(Sender: TObject);
-    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -87,18 +86,11 @@ end;
 
 procedure TFrm_pesqFornecedor.Bit_transferirClick(Sender: TObject);
 begin
-
+  inherited;
     if Q_pesqPadrao.RecordCount > 0 then
     codigo := Q_pesqPadraoID_FORNECEDOR.AsInteger
   else
     abort;
-end;
-
-procedure TFrm_pesqFornecedor.DBGrid1DblClick(Sender: TObject);
-begin
-  inherited;
-  Bit_transferir.Click;
-
 end;
 
 end.

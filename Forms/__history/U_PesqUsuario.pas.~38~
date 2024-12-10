@@ -19,7 +19,6 @@ type
     procedure Bit_pesquisarClick(Sender: TObject);
     procedure CB_chaveChange(Sender: TObject);
     procedure Bit_transferirClick(Sender: TObject);
-    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -68,9 +67,9 @@ procedure TFrm_pesqUsuario.Bit_transferirClick(Sender: TObject);
 begin
 
   if Q_pesqPadrao.RecordCount > 0 then
-    codigo := Q_pesqPadraoID_USUARIO.AsInteger
-  else
-    abort;
+  begin
+    codigo := Q_pesqPadraoID_USUARIO.AsInteger;
+  end;
 
 end;
 
@@ -118,12 +117,6 @@ begin
     end;
   end;
 
-end;
-
-procedure TFrm_pesqUsuario.DBGrid1DblClick(Sender: TObject);
-begin
-  inherited;
-  Bit_transferir.Click;
 end;
 
 end.

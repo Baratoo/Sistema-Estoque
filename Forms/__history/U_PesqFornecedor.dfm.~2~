@@ -1,6 +1,5 @@
 inherited Frm_pesqFornecedor: TFrm_pesqFornecedor
   Caption = 'PESQUISA FORNECEDORES'
-  ExplicitLeft = -172
   TextHeight = 15
   inherited Panel1: TPanel
     inherited MK_inicio: TMaskEdit
@@ -18,14 +17,9 @@ inherited Frm_pesqFornecedor: TFrm_pesqFornecedor
     inherited Bit_pesquisar: TBitBtn
       OnClick = Bit_pesquisarClick
     end
-    inherited Bit_transferir: TBitBtn
-      ModalResult = 1
-      OnClick = Bit_transferirClick
-    end
   end
   inherited DBGrid1: TDBGrid
     DataSource = DS_pesqPadrao
-    OnDblClick = DBGrid1DblClick
     Columns = <
       item
         Expanded = False

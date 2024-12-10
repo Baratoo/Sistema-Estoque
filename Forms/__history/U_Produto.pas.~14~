@@ -72,11 +72,8 @@ begin
   Frm_pesqProdutos := TFrm_pesqProdutos.Create(self);
   Frm_pesqProdutos.ShowModal;
   try
-    if Frm_pesqProdutos.codigo > 0 then
-    begin
-      Q_padrao.Open;
-      Q_padrao.Locate('ID_PRODUTO', Frm_pesqProdutos.codigo, []);
-    end;
+    Q_padrao.Open;
+    Q_padrao.Locate('ID_PRODUTO', Frm_pesqProdutos.codigo, []);
   finally
     Frm_pesqProdutos.Free;
     Frm_pesqProdutos := nil;

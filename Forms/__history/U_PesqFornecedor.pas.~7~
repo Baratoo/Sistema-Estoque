@@ -87,7 +87,7 @@ end;
 
 procedure TFrm_pesqFornecedor.Bit_transferirClick(Sender: TObject);
 begin
-
+  inherited;
     if Q_pesqPadrao.RecordCount > 0 then
     codigo := Q_pesqPadraoID_FORNECEDOR.AsInteger
   else

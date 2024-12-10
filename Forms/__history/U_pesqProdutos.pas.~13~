@@ -12,19 +12,7 @@ uses
 
 type
   TFrm_pesqProdutos = class(TFrm_formPadrao)
-    Q_pesqPadraoID_PRODUTO: TIntegerField;
-    Q_pesqPadraoPRODUTO_DESCRICAO: TStringField;
-    Q_pesqPadraoVL_CUSTO: TFMTBCDField;
-    Q_pesqPadraoVL_VENDA: TFMTBCDField;
-    Q_pesqPadraoESTOQUE: TFMTBCDField;
-    Q_pesqPadraoESTOQUE_MIN: TFMTBCDField;
-    Q_pesqPadraoUNIDADE: TStringField;
-    Q_pesqPadraoCADASTRO: TDateField;
-    Q_pesqPadraoID_FORNECEDOR: TIntegerField;
-    Q_pesqPadraoNOME: TStringField;
     procedure Bit_pesquisarClick(Sender: TObject);
-    procedure Bit_transferirClick(Sender: TObject);
-    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,8 +25,6 @@ var
 implementation
 
 {$R *.dfm}
-
-uses U_DM, U_Produto;
 
 procedure TFrm_pesqProdutos.Bit_pesquisarClick(Sender: TObject);
 begin
@@ -91,22 +77,6 @@ begin
     abort;
   end;
 
-end;
-
-procedure TFrm_pesqProdutos.Bit_transferirClick(Sender: TObject);
-begin
-
-  if Q_pesqPadrao.RecordCount > 0 then
-    codigo := Q_pesqPadraoID_PRODUTO.asInteger
-  else
-    abort;
-
-end;
-
-procedure TFrm_pesqProdutos.DBGrid1DblClick(Sender: TObject);
-begin
-  inherited;
-  Bit_transferir.Click;
 end;
 
 end.

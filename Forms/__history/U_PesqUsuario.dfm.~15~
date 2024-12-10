@@ -15,7 +15,6 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       OnClick = Bit_pesquisarClick
     end
     inherited Bit_transferir: TBitBtn
-      ModalResult = 1
       OnClick = Bit_transferirClick
     end
   end

@@ -39,7 +39,6 @@ inherited Frm_pesqProdutos: TFrm_pesqProdutos
   end
   inherited DBGrid1: TDBGrid
     DataSource = DS_pesqPadrao
-    OnDblClick = DBGrid1DblClick
     Columns = <
       item
         Expanded = False

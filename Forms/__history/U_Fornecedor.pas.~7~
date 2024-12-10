@@ -78,8 +78,7 @@ begin
   Frm_pesqFornecedor := TFrm_pesqFornecedor.Create(self);
   Frm_pesqFornecedor.ShowModal;
   try
-    Q_padrao.Open;
-    Q_padrao.Locate('ID_FORNECEDOR', Frm_pesqFornecedor.codigo, []);
+
   finally
     Frm_pesqFornecedor.Free;
     Frm_pesqFornecedor := nil;
