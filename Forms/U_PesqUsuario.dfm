@@ -1,12 +1,12 @@
 inherited Frm_pesqUsuario: TFrm_pesqUsuario
   Caption = 'PESQUISA DE USU'#193'RIOS'
-  PixelsPerInch = 96
   TextHeight = 15
   inherited Panel1: TPanel
+    ExplicitWidth = 1300
     inherited Label2: TLabel
-      Width = 147
+      Width = 146
       Caption = 'PARAMETRO P/ PESQUISA'
-      ExplicitWidth = 147
+      ExplicitWidth = 146
     end
     inherited Label3: TLabel
       Left = 325
@@ -31,9 +31,17 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
     inherited Bit_pesquisar: TBitBtn
       OnClick = Bit_pesquisarClick
     end
+    inherited Bit_transferir: TBitBtn
+      ModalResult = 1
+      OnClick = Bit_transferirClick
+    end
+  end
+  inherited Panel2: TPanel
+    ExplicitTop = 470
   end
   inherited DBGrid1: TDBGrid
     DataSource = DS_pesqPadrao
+    OnDblClick = DBGrid1DblClick
     Columns = <
       item
         Expanded = False

@@ -2,8 +2,8 @@ object Frm_formPadrao: TFrm_formPadrao
   Left = 0
   Top = 0
   Caption = 'FORMUL'#193'RIO PADR'#195'O'
-  ClientHeight = 442
-  ClientWidth = 709
+  ClientHeight = 512
+  ClientWidth = 1288
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,11 +14,11 @@ object Frm_formPadrao: TFrm_formPadrao
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 709
+    Width = 1288
     Height = 89
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 628
+    ExplicitWidth = 705
     object Label1: TLabel
       Left = 16
       Top = 27
@@ -88,6 +88,7 @@ object Frm_formPadrao: TFrm_formPadrao
       Top = 48
       Width = 161
       Height = 23
+      CharCase = ecUpperCase
       TabOrder = 1
     end
     object MK_inicio: TMaskEdit
@@ -111,8 +112,8 @@ object Frm_formPadrao: TFrm_formPadrao
       Text = ''
     end
     object Bit_pesquisar: TBitBtn
-      Left = 470
-      Top = 27
+      Left = 1046
+      Top = 24
       Width = 65
       Height = 44
       Glyph.Data = {
@@ -249,8 +250,8 @@ object Frm_formPadrao: TFrm_formPadrao
       TabOrder = 4
     end
     object Bit_transferir: TBitBtn
-      Left = 551
-      Top = 27
+      Left = 1127
+      Top = 24
       Width = 65
       Height = 44
       Glyph.Data = {
@@ -387,8 +388,8 @@ object Frm_formPadrao: TFrm_formPadrao
       TabOrder = 5
     end
     object Bit_imprimir: TBitBtn
-      Left = 632
-      Top = 27
+      Left = 1208
+      Top = 24
       Width = 65
       Height = 44
       Glyph.Data = {
@@ -527,20 +528,19 @@ object Frm_formPadrao: TFrm_formPadrao
   end
   object Panel2: TPanel
     Left = 0
-    Top = 401
-    Width = 709
+    Top = 471
+    Width = 1288
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitLeft = 384
-    ExplicitTop = 368
-    ExplicitWidth = 185
+    ExplicitTop = 400
+    ExplicitWidth = 705
   end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 89
-    Width = 709
-    Height = 312
+    Width = 1288
+    Height = 382
     Align = alClient
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET

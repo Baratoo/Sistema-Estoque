@@ -1,0 +1,9 @@
+inherited Frm_pesqFornecedor: TFrm_pesqFornecedor
+  Caption = 'PESQUISA FORNECEDORES'
+  TextHeight = 15
+  inherited Panel1: TPanel
+    inherited Bit_pesquisar: TBitBtn
+      OnClick = Bit_pesquisarClick
+    end
+  end
+end

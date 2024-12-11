@@ -1,0 +1,17 @@
+inherited Frm_padraoMovimento: TFrm_padraoMovimento
+  Caption = 'Frm_padraoMovimento'
+  ClientHeight = 512
+  ClientWidth = 628
+  ExplicitHeight = 550
+  TextHeight = 15
+  inherited Panel1: TPanel
+    Width = 628
+  end
+  inherited Panel2: TPanel
+    Top = 462
+    Width = 628
+    inherited DBNavigator1: TDBNavigator
+      Hints.Strings = ()
+    end
+  end
+end

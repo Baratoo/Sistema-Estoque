@@ -21,7 +21,11 @@ object Frm_Principal: TFrm_Principal
     Width = 988
     Height = 90
     Align = alTop
+<<<<<<< HEAD
     Color = clMenuHighlight
+=======
+    Color = clMedGray
+>>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
     ParentBackground = False
     TabOrder = 0
     object Sbt_usuario: TSpeedButton
@@ -3331,6 +3335,10 @@ object Frm_Principal: TFrm_Principal
         1E1E1E1E5F0443FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
       Layout = blGlyphTop
       ParentFont = False
+<<<<<<< HEAD
+      OnClick = SpeedButton7Click
+=======
+>>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
     end
     object SpeedButton8: TSpeedButton
       Left = 698

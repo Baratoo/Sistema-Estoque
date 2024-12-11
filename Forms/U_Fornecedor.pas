@@ -49,6 +49,7 @@ type
     Label12: TLabel;
     DB_cadastro: TDBEdit;
     procedure Bit_incluirClick(Sender: TObject);
+    procedure Bit_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,11 +63,28 @@ implementation
 
 {$R *.dfm}
 
+uses U_PesqFornecedor;
+
+
 procedure TFrm_Fornecedor.Bit_incluirClick(Sender: TObject);
 begin
   inherited;
   DB_cadastro.Text := DateToStr(now);
   DB_nome.SetFocus;
+end;
+
+procedure TFrm_Fornecedor.Bit_pesquisarClick(Sender: TObject);
+begin
+  Frm_pesqFornecedor := TFrm_pesqFornecedor.Create(self);
+  Frm_pesqFornecedor.ShowModal;
+  try
+    Q_padrao.Open;
+    Q_padrao.Locate('ID_FORNECEDOR', Frm_pesqFornecedor.codigo, []);
+  finally
+    Frm_pesqFornecedor.Free;
+    Frm_pesqFornecedor := nil;
+  end;
+
 end;
 
 end.

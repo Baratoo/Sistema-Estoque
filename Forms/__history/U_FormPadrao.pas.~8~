@@ -1,0 +1,47 @@
+unit U_FormPadrao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Mask, Vcl.StdCtrls, Vcl.ExtCtrls,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TFrm_formPadrao = class(TForm)
+    Panel1: TPanel;
+    CB_chave: TComboBox;
+    Label1: TLabel;
+    Edt_nome: TEdit;
+    MK_inicio: TMaskEdit;
+    MK_fim: TMaskEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Panel2: TPanel;
+    DBGrid1: TDBGrid;
+    Bit_pesquisar: TBitBtn;
+    Bit_transferir: TBitBtn;
+    Bit_imprimir: TBitBtn;
+    Q_pesqPadrao: TFDQuery;
+    DS_pesqPadrao: TDataSource;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+      codigo :Integer;
+  end;
+
+var
+  Frm_formPadrao: TFrm_formPadrao;
+
+implementation
+
+{$R *.dfm}
+
+uses U_DM;
+
+end.

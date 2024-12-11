@@ -58,7 +58,11 @@ begin
   Frm_pesqUsuario := TFrm_pesqUsuario.Create(self);
   Frm_pesqUsuario.ShowModal;
   try
-
+    if Frm_pesqUsuario.codigo > 0 then
+    begin
+      Q_padrao.Open;
+      q_padrao.Locate('ID_USUARIO', Frm_pesqUsuario.codigo, []);
+    end;
   finally
     Frm_pesqUsuario.Free;
     Frm_pesqUsuario := nil;

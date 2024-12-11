@@ -10,9 +10,11 @@ uses
   U_FormPadrao in '..\Forms\U_FormPadrao.pas' {Frm_formPadrao},
   U_Fornecedor in '..\Forms\U_Fornecedor.pas' {Frm_Fornecedor},
   U_Padrao in '..\Forms\U_Padrao.pas' {Frm_padrao},
+  U_PesqFornecedor in '..\Forms\U_PesqFornecedor.pas' {Frm_pesqFornecedor},
   U_PesqUsuario in '..\Forms\U_PesqUsuario.pas' {Frm_pesqUsuario},
   U_Principal in '..\Forms\U_Principal.pas' {Frm_Principal},
-  U_Produto in '..\Forms\U_Produto.pas' {Frm_Produto};
+  U_Produto in '..\Forms\U_Produto.pas' {Frm_Produto},
+  U_pesqProdutos in '..\Forms\U_pesqProdutos.pas' {Frm_pesqProdutos};
 
 {$R *.res}
 

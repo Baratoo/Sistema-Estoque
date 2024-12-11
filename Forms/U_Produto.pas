@@ -36,7 +36,14 @@ type
     Label8: TLabel;
     DB_descricao: TDBEdit;
     DB_unidade: TDBComboBox;
+    Q_padraoID_FORNECEDOR: TIntegerField;
+    Q_padraoNOME: TStringField;
+    Label9: TLabel;
+    DB_codForn: TDBEdit;
+    Label10: TLabel;
+    DB_nomeForn: TDBEdit;
     procedure Bit_incluirClick(Sender: TObject);
+    procedure Bit_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,11 +57,30 @@ implementation
 
 {$R *.dfm}
 
+uses U_pesqProdutos;
+
 procedure TFrm_Produto.Bit_incluirClick(Sender: TObject);
 begin
   inherited;
   DB_cadastro.Text := DateToStr(now);
   DB_descricao.SetFocus;
+
+end;
+
+procedure TFrm_Produto.Bit_pesquisarClick(Sender: TObject);
+begin
+  Frm_pesqProdutos := TFrm_pesqProdutos.Create(self);
+  Frm_pesqProdutos.ShowModal;
+  try
+    if Frm_pesqProdutos.codigo > 0 then
+    begin
+      Q_padrao.Open;
+      Q_padrao.Locate('ID_PRODUTO', Frm_pesqProdutos.codigo, []);
+    end;
+  finally
+    Frm_pesqProdutos.Free;
+    Frm_pesqProdutos := nil;
+  end;
 
 end;
 

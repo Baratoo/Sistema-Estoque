@@ -1,8 +1,21 @@
 inherited Frm_pesqUsuario: TFrm_pesqUsuario
   Caption = 'PESQUISA DE USU'#193'RIOS'
+<<<<<<< HEAD
+<<<<<<<< HEAD:Forms/__history/U_PesqUsuario.dfm.~12~
+  PixelsPerInch = 96
+========
+  ClientWidth = 709
+  ExplicitWidth = 721
+>>>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092:Forms/__history/U_PesqUsuario.dfm.~11~
+  TextHeight = 15
+  inherited Panel1: TPanel
+    Width = 709
+=======
   PixelsPerInch = 96
   TextHeight = 15
   inherited Panel1: TPanel
+    ExplicitWidth = 1300
+>>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
     inherited Label2: TLabel
       Width = 147
       Caption = 'PARAMETRO P/ PESQUISA'
@@ -14,11 +27,30 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
     inherited Edt_nome: TEdit
       CharCase = ecUpperCase
     end
+<<<<<<< HEAD
+    inherited Bit_pesquisar: TBitBtn
+      OnClick = Bit_pesquisarClick
+    end
+=======
+>>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
+    inherited CB_chave: TComboBox
+      OnChange = CB_chaveChange
+    end
     inherited Bit_pesquisar: TBitBtn
       OnClick = Bit_pesquisarClick
     end
   end
+  inherited Panel2: TPanel
+<<<<<<< HEAD
+    Width = 709
+  end
   inherited DBGrid1: TDBGrid
+    Width = 709
+=======
+    ExplicitTop = 470
+  end
+  inherited DBGrid1: TDBGrid
+>>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
     DataSource = DS_pesqPadrao
     Columns = <
       item

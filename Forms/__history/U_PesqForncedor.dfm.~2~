@@ -1,0 +1,4 @@
+inherited Frm_pesqFornecedor: TFrm_pesqFornecedor
+  Caption = 'PESQUISA FORNECEDORES'
+  TextHeight = 15
+end

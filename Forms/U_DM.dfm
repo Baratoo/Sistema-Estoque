@@ -1,10 +1,11 @@
 object DM: TDM
-  OldCreateOrder = True
   Height = 480
   Width = 640
   object conexao: TFDConnection
     Params.Strings = (
-      'Database=C:\ESTOQUE.FDB'
+      
+        'Database=D:\Usu'#225'rios\Barato\Documents\Estoque_Udemy\XE\BANCO\EST' +
+        'OQUE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'
@@ -12,6 +13,7 @@ object DM: TDM
       'CharacterSet=WIN1252'
       'Port=3050'
       'DriverID=FB')
+    Connected = True
     LoginPrompt = False
     Transaction = transacao
     Left = 88

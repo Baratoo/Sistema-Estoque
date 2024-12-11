@@ -19,6 +19,8 @@ type
     Q_pesqPadraoCADASTRO: TDateField;
     procedure Bit_pesquisarClick(Sender: TObject);
     procedure CB_chaveChange(Sender: TObject);
+    procedure Bit_transferirClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,6 +71,16 @@ begin
   if Q_pesqPadrao.IsEmpty then
     MessageDlg('Registro não encontrado', mtInformation, [mbOK], 1);
   abort;
+
+end;
+
+procedure TFrm_pesqUsuario.Bit_transferirClick(Sender: TObject);
+begin
+
+  if Q_pesqPadrao.RecordCount > 0 then
+    codigo := Q_pesqPadraoID_USUARIO.AsInteger
+  else
+    abort;
 
 end;
 
@@ -133,6 +145,12 @@ begin
     end;
   end;
 
+end;
+
+procedure TFrm_pesqUsuario.DBGrid1DblClick(Sender: TObject);
+begin
+  inherited;
+  Bit_transferir.Click;
 end;
 
 end.

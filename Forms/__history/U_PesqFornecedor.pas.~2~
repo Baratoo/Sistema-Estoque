@@ -1,0 +1,80 @@
+unit U_PesqFornecedor;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, U_FormPadrao, Data.DB,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
+
+type
+  TFrm_pesqFornecedor = class(TFrm_formPadrao)
+    Q_pesqPadraoID_FORNECEDOR: TIntegerField;
+    Q_pesqPadraoNOME: TStringField;
+    Q_pesqPadraoENDERECO: TStringField;
+    Q_pesqPadraoNUMERO: TIntegerField;
+    Q_pesqPadraoBAIRRO: TStringField;
+    Q_pesqPadraoCIDADE: TStringField;
+    Q_pesqPadraoUF: TStringField;
+    Q_pesqPadraoCEP: TStringField;
+    Q_pesqPadraoTELEFONE: TStringField;
+    Q_pesqPadraoEMAIL: TStringField;
+    Q_pesqPadraoCNPJ: TStringField;
+    Q_pesqPadraoCADASTRO: TDateField;
+    procedure Bit_pesquisarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Frm_pesqFornecedor: TFrm_pesqFornecedor;
+
+implementation
+
+{$R *.dfm}
+
+procedure TFrm_pesqFornecedor.Bit_pesquisarClick(Sender: TObject);
+begin
+
+  with Q_pesqPadrao do
+  begin
+    SQL.Add('SELECT ID_FORNECEDOR, NOME, ENDERECO, NUMERO, BAIRRO, CIDADE,');
+    SQL.Add(' UF, CEP, TELEFONE, EMAIL, CNPJ, CADASTRO ') ;
+    SQL.Add(' FROM FORNECEDOR');
+
+    case CB_chave.ItemIndex of
+    0:begin
+      Q_pesqPadrao.SQL.Add('WHERE ID_FORNECEDOR = :ID_FORNECEDOR');
+      Q_pesqPadrao.ParamByName('ID_FORNECEDOR').AsString := Edt_nome.Text;
+      end;
+    1:begin
+      Q_pesqPadrao.SQL.Add('WHERE NOME LIKE :NOME');
+      Q_pesqPadrao.ParamByName('NOME').AsString := '%' + Edt_nome.Text + '%';
+      end;
+    2:begin
+      Q_pesqPadrao.SQL.Add('WHERE CADASTRO = :CADASTRO');
+      Q_pesqPadrao.ParamByName('CADASTRO').AsDate := StrToDate(MK_inicio.Text);
+      end;
+    3:begin
+      Q_pesqPadrao.SQL.Add('WHERE CADASTRO = :CADASTRO');
+      Q_pesqPadrao.ParamByName('CADASTRO').AsDate := StrToDate(MK_inicio.Text);
+      end;
+    end;
+
+    Open;
+
+    if Q_pesqPadrao.IsEmpty then
+    begin
+      MessageDlg('Registro não encontrado', mtInformation, [mbOK], 1);
+    end
+    else
+    abort;
+  end;
+end;
+
+end.
