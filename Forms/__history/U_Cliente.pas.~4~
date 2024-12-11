@@ -49,7 +49,6 @@ type
     Label12: TLabel;
     DB_cadastro: TDBEdit;
     procedure Bit_incluirClick(Sender: TObject);
-    procedure Bit_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -61,9 +60,6 @@ var
 
 implementation
 
-uses
-  U_PesqCliente;
-
 {$R *.dfm}
 
 procedure TFrm_Cliente.Bit_incluirClick(Sender: TObject);
@@ -71,19 +67,6 @@ begin
   inherited;
   DB_cadastro.Text := DateToStr(now);
   DB_nome.SetFocus;
-end;
-
-procedure TFrm_Cliente.Bit_pesquisarClick(Sender: TObject);
-begin
-  Frm_pesqCliente := TFrm_pesqCliente.Create(self);
-  Frm_pesqCliente.ShowModal;
-  try
-
-  finally
-    Frm_pesqCliente.Free;
-    Frm_pesqCliente := nil;
-  end;
-
 end;
 
 end.

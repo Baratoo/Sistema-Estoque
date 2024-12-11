@@ -1,0 +1,89 @@
+inherited Frm_pesqFornecedor: TFrm_pesqFornecedor
+  Caption = 'PESQUISA FORNECEDOR'
+  PixelsPerInch = 96
+  TextHeight = 15
+  inherited DBGrid1: TDBGrid
+    DataSource = DS_pesqPadrao
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'ID_FORNECEDOR'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NOME'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'ENDERECO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'NUMERO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'BAIRRO'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CIDADE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'UF'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CEP'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TELEFONE'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'EMAIL'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CNPJ'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'CADASTRO'
+        Visible = True
+      end>
+  end
+  inherited Q_pesqPadrao: TFDQuery
+    Active = True
+    SQL.Strings = (
+      'SELECT '
+      '  ID_FORNECEDOR,'
+      '  NOME,'
+      '  ENDERECO,'
+      '  NUMERO,'
+      '  BAIRRO,'
+      '  CIDADE,'
+      '  UF,'
+      '  CEP,'
+      '  TELEFONE,'
+      '  EMAIL,'
+      '  CNPJ,'
+      '  CADASTRO'
+      '  '
+      '  FROM FORNECEDOR'
+      '  ORDER BY ID_FORNECEDOR')
+  end
+end

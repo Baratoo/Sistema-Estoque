@@ -16,6 +16,9 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       Left = 397
       ExplicitLeft = 397
     end
+    inherited Edt_nome: TEdit
+      CharCase = ecUpperCase
+    end
     inherited MK_inicio: TMaskEdit
       Left = 325
       EditMask = '!99/99/0000;1;_'

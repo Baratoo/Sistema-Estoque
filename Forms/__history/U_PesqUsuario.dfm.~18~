@@ -3,6 +3,7 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
   PixelsPerInch = 96
   TextHeight = 15
   inherited Panel1: TPanel
+    ExplicitTop = 8
     inherited Label2: TLabel
       Width = 147
       Caption = 'PARAMETRO P/ PESQUISA'
@@ -15,6 +16,9 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
     inherited Label4: TLabel
       Left = 397
       ExplicitLeft = 397
+    end
+    inherited Edt_nome: TEdit
+      CharCase = ecUpperCase
     end
     inherited MK_inicio: TMaskEdit
       Left = 325

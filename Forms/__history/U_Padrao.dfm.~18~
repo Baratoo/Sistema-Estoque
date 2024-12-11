@@ -3,7 +3,7 @@ object Frm_padrao: TFrm_padrao
   Top = 0
   Caption = 'Formulario'
   ClientHeight = 442
-  ClientWidth = 621
+  ClientWidth = 638
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,7 +19,7 @@ object Frm_padrao: TFrm_padrao
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 621
+    Width = 638
     Height = 73
     Align = alTop
     BiDiMode = bdLeftToRight
@@ -126,7 +126,7 @@ object Frm_padrao: TFrm_padrao
   object Panel2: TPanel
     Left = 0
     Top = 392
-    Width = 621
+    Width = 638
     Height = 50
     Align = alBottom
     Color = clBtnShadow
@@ -134,7 +134,7 @@ object Frm_padrao: TFrm_padrao
     TabOrder = 1
     ExplicitWidth = 628
     object DBNavigator1: TDBNavigator
-      Left = 390
+      Left = 408
       Top = 8
       Width = 220
       Height = 25

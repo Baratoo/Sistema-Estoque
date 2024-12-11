@@ -8,25 +8,23 @@ inherited Frm_pesqUsuario: TFrm_pesqUsuario
       Caption = 'PARAMETRO P/ PESQUISA'
       ExplicitWidth = 147
     end
-    inherited Label3: TLabel
-      Left = 325
-      ExplicitLeft = 325
+    inherited CB_chave: TComboBox
+      OnChange = CB_chaveChange
     end
-    inherited Label4: TLabel
-      Left = 397
-      ExplicitLeft = 397
+    inherited Edt_nome: TEdit
+      CharCase = ecUpperCase
     end
     inherited MK_inicio: TMaskEdit
-      Left = 325
+      Width = 55
       EditMask = '!99/99/0000;1;_'
       Text = '  /  /    '
-      ExplicitLeft = 325
+      ExplicitWidth = 55
     end
     inherited MK_fim: TMaskEdit
-      Left = 397
+      Width = 55
       EditMask = '!99/99/0000;1;_'
       Text = '  /  /    '
-      ExplicitLeft = 397
+      ExplicitWidth = 55
     end
     inherited Bit_pesquisar: TBitBtn
       OnClick = Bit_pesquisarClick
