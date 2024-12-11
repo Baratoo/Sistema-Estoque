@@ -1,11 +1,10 @@
 object DM: TDM
+  OldCreateOrder = True
   Height = 480
   Width = 640
   object conexao: TFDConnection
     Params.Strings = (
-      
-        'Database=D:\Usu'#225'rios\Barato\Documents\Estoque_Udemy\XE\BANCO\EST' +
-        'OQUE.FDB'
+      'Database=C:\ESTOQUE.FDB'
       'User_Name=SYSDBA'
       'Password=masterkey'
       'Protocol=TCPIP'

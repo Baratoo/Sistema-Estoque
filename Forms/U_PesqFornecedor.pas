@@ -4,21 +4,14 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-<<<<<<< HEAD
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, U_PesqPadrao, Data.DB,
-=======
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, U_FormPadrao, Data.DB,
->>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-<<<<<<< HEAD
   TFrm_pesqFornecedor = class(TFrm_pesqPadrao)
-=======
-  TFrm_pesqFornecedor = class(TFrm_formPadrao)
     Q_pesqPadraoID_FORNECEDOR: TIntegerField;
     Q_pesqPadraoNOME: TStringField;
     Q_pesqPadraoENDERECO: TStringField;
@@ -34,7 +27,6 @@ type
     procedure Bit_pesquisarClick(Sender: TObject);
     procedure Bit_transferirClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
->>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
   private
     { Private declarations }
   public
@@ -48,11 +40,8 @@ implementation
 
 {$R *.dfm}
 
-<<<<<<< HEAD
-=======
 procedure TFrm_pesqFornecedor.Bit_pesquisarClick(Sender: TObject);
 begin
-
   with Q_pesqPadrao do
   begin
     Close;
@@ -93,23 +82,22 @@ begin
     else
     abort;
   end;
+
 end;
 
 procedure TFrm_pesqFornecedor.Bit_transferirClick(Sender: TObject);
 begin
-
-    if Q_pesqPadrao.RecordCount > 0 then
+if Q_pesqPadrao.RecordCount > 0 then
     codigo := Q_pesqPadraoID_FORNECEDOR.AsInteger
   else
     abort;
+
 end;
 
 procedure TFrm_pesqFornecedor.DBGrid1DblClick(Sender: TObject);
 begin
   inherited;
-  Bit_transferir.Click;
-
+  Bit_transferir.Click
 end;
 
->>>>>>> bfff4a9ba326b501ae6577a18df50f2b3fec6092
 end.

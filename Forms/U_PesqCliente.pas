@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls,
+  frxClass, frxDBSet;
 
 type
   TFrm_pesqCliente = class(TFrm_pesqPadrao)
@@ -25,6 +26,9 @@ type
     Q_pesqPadraoEMAIL: TStringField;
     Q_pesqPadraoCADASTRO: TDateField;
     procedure Bit_pesquisarClick(Sender: TObject);
+    procedure Bit_transferirClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
+    procedure Bit_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -37,6 +41,23 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TFrm_pesqCliente.Bit_imprimirClick(Sender: TObject);
+  var caminho :string;
+begin
+  caminho := ExtractFilePath(Application.ExeName);
+  if Frm_pesqCliente.Rel_pesqPadrao.LoadFromFile(caminho + 'Rel_Cliente.fr3') then
+  begin
+    Rel_pesqPadrao.Clear;
+    Rel_pesqPadrao.LoadFromFile(ExtractFilePath(Application.ExeName) + 'Rel_Cliente.fr3');
+    Rel_pesqPadrao.PrepareReport(true);
+    Rel_pesqPadrao.ShowPreparedReport;
+  end
+  else
+    MessageDlg('Erro ao gerar relatório!', mtInformation, [mbOk], 0);
+
+
+end;
 
 procedure TFrm_pesqCliente.Bit_pesquisarClick(Sender: TObject);
 begin
@@ -79,6 +100,21 @@ begin
   abort;
   end;
 
+end;
+
+procedure TFrm_pesqCliente.Bit_transferirClick(Sender: TObject);
+begin
+  if Q_pesqPadrao.RecordCount > 0 then
+    codigo := Q_pesqPadraoID_CLIENTE.AsInteger
+  else
+    Abort;
+
+end;
+
+procedure TFrm_pesqCliente.DBGrid1DblClick(Sender: TObject);
+begin
+  inherited;
+  Bit_transferir.Click;
 end;
 
 end.

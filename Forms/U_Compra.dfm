@@ -1,30 +1,32 @@
 inherited Frm_compras: TFrm_compras
   Caption = 'CADASTRO DE COMPRAS'
-  ClientHeight = 626
+  ClientHeight = 504
   ClientWidth = 988
-  ExplicitWidth = 1000
-  ExplicitHeight = 664
+  ExplicitTop = -32
+  ExplicitWidth = 1004
+  ExplicitHeight = 542
+  PixelsPerInch = 96
   TextHeight = 15
   object Label11: TLabel [0]
     Left = 520
     Top = 488
-    Width = 54
+    Width = 56
     Height = 15
     Caption = 'VL_CUSTO'
   end
   inherited Panel1: TPanel
     Width = 988
-    ExplicitWidth = 984
+    ExplicitWidth = 988
     inherited Bit_fechar: TBitBtn
       Left = 908
       ExplicitLeft = 908
     end
   end
   inherited Panel2: TPanel
-    Top = 562
+    Top = 440
     Width = 988
-    ExplicitTop = 561
-    ExplicitWidth = 984
+    ExplicitTop = 562
+    ExplicitWidth = 988
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -37,7 +39,7 @@ inherited Frm_compras: TFrm_compras
   end
   inherited Panel3: TPanel
     Width = 988
-    ExplicitWidth = 984
+    ExplicitWidth = 988
     object Label1: TLabel
       Left = 8
       Top = 10
@@ -111,7 +113,7 @@ inherited Frm_compras: TFrm_compras
     object Label6: TLabel
       Left = 778
       Top = 12
-      Width = 38
+      Width = 39
       Height = 15
       Caption = 'VALOR'
       FocusControl = DB_valor
@@ -222,11 +224,11 @@ inherited Frm_compras: TFrm_compras
     end
   end
   inherited Panel4: TPanel
-    Top = 492
+    Top = 370
     Width = 988
     ExplicitLeft = 0
-    ExplicitTop = 491
-    ExplicitWidth = 984
+    ExplicitTop = 492
+    ExplicitWidth = 988
     object Label9: TLabel
       Left = 8
       Top = 8
@@ -286,7 +288,7 @@ inherited Frm_compras: TFrm_compras
     object Label14: TLabel
       Left = 778
       Top = 8
-      Width = 36
+      Width = 37
       Height = 15
       Caption = 'TOTAL'
       FocusControl = DB_total
@@ -346,7 +348,7 @@ inherited Frm_compras: TFrm_compras
   end
   inherited DBGrid1: TDBGrid
     Width = 988
-    Height = 309
+    Height = 187
     DataSource = Ds_padraoItem
     Columns = <
       item
@@ -630,6 +632,7 @@ inherited Frm_compras: TFrm_compras
     Top = 208
   end
   object Q_produto: TFDQuery
+    Active = True
     Connection = DM.conexao
     SQL.Strings = (
       'SELECT'

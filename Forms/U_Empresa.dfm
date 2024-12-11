@@ -2,8 +2,10 @@ inherited Frm_Empresa: TFrm_Empresa
   Caption = 'CADASTRO DE EMPRESA'
   ClientHeight = 562
   ClientWidth = 624
-  ExplicitWidth = 636
+  ExplicitTop = -149
+  ExplicitWidth = 640
   ExplicitHeight = 600
+  PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 32
@@ -16,7 +18,7 @@ inherited Frm_Empresa: TFrm_Empresa
   object Label2: TLabel [1]
     Left = 32
     Top = 186
-    Width = 90
+    Width = 93
     Height = 15
     Caption = 'NOME FANTASIA'
     FocusControl = DB_nFantasia
@@ -72,7 +74,7 @@ inherited Frm_Empresa: TFrm_Empresa
   object Label9: TLabel [8]
     Left = 254
     Top = 375
-    Width = 54
+    Width = 55
     Height = 15
     Caption = 'TELEFONE'
     FocusControl = DB_telefone
@@ -80,7 +82,7 @@ inherited Frm_Empresa: TFrm_Empresa
   object Label10: TLabel [9]
     Left = 397
     Top = 425
-    Width = 27
+    Width = 28
     Height = 15
     Caption = 'CNPJ'
     FocusControl = DB_cnpj
@@ -96,7 +98,7 @@ inherited Frm_Empresa: TFrm_Empresa
   object Label13: TLabel [11]
     Left = 104
     Top = 808
-    Width = 60
+    Width = 61
     Height = 15
     Caption = 'CADASTRO'
     FocusControl = DBEdit12
@@ -104,7 +106,7 @@ inherited Frm_Empresa: TFrm_Empresa
   object Label14: TLabel [12]
     Left = 208
     Top = 96
-    Width = 60
+    Width = 61
     Height = 15
     Caption = 'CADASTRO'
     FocusControl = DB_cadastro
@@ -120,14 +122,14 @@ inherited Frm_Empresa: TFrm_Empresa
   inherited Panel1: TPanel
     Width = 624
     TabOrder = 11
-    ExplicitWidth = 620
+    ExplicitWidth = 624
   end
   inherited Panel2: TPanel
     Top = 512
     Width = 624
     TabOrder = 12
-    ExplicitTop = 511
-    ExplicitWidth = 620
+    ExplicitTop = 512
+    ExplicitWidth = 624
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -146,6 +148,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 207
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'N_FANTASIA'
     DataSource = ds_padrao
     TabOrder = 1
@@ -155,6 +158,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 252
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'ENDERECO'
     DataSource = ds_padrao
     TabOrder = 2
@@ -173,6 +177,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 296
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'BAIRRO'
     DataSource = ds_padrao
     TabOrder = 4
@@ -182,6 +187,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 346
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'CIDADE'
     DataSource = ds_padrao
     TabOrder = 5
@@ -191,6 +197,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 346
     Width = 34
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'UF'
     DataSource = ds_padrao
     TabOrder = 6
@@ -227,6 +234,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 446
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'EMAIL'
     DataSource = ds_padrao
     TabOrder = 9
@@ -265,6 +273,7 @@ inherited Frm_Empresa: TFrm_Empresa
     Top = 157
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'RAZAO_SOCIAL'
     DataSource = ds_padrao
     TabOrder = 16

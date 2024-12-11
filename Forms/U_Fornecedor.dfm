@@ -2,6 +2,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
   Caption = 'CADASTRO DE FORNECEDORES'
   ClientHeight = 505
   ExplicitHeight = 543
+  PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 24
@@ -70,7 +71,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
   object Label9: TLabel [8]
     Left = 388
     Top = 336
-    Width = 54
+    Width = 55
     Height = 15
     Caption = 'TELEFONE'
     FocusControl = DB_telefone
@@ -86,7 +87,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
   object Label11: TLabel [10]
     Left = 24
     Top = 384
-    Width = 27
+    Width = 28
     Height = 15
     Caption = 'CNPJ'
     FocusControl = DB_cnpj
@@ -94,7 +95,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
   object Label12: TLabel [11]
     Left = 220
     Top = 96
-    Width = 60
+    Width = 61
     Height = 15
     Caption = 'CADASTRO'
     FocusControl = DB_cadastro
@@ -105,7 +106,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
   inherited Panel2: TPanel
     Top = 455
     TabOrder = 11
-    ExplicitTop = 454
+    ExplicitTop = 455
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -124,6 +125,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
     Top = 160
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'NOME'
     DataSource = ds_padrao
     TabOrder = 0
@@ -133,6 +135,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
     Top = 208
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'ENDERECO'
     DataSource = ds_padrao
     TabOrder = 1
@@ -151,6 +154,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
     Top = 256
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'BAIRRO'
     DataSource = ds_padrao
     TabOrder = 3
@@ -160,6 +164,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
     Top = 307
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'CIDADE'
     DataSource = ds_padrao
     TabOrder = 5
@@ -169,6 +174,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
     Top = 256
     Width = 34
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'UF'
     DataSource = ds_padrao
     TabOrder = 4
@@ -196,6 +202,7 @@ inherited Frm_Fornecedor: TFrm_Fornecedor
     Top = 355
     Width = 350
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'EMAIL'
     DataSource = ds_padrao
     TabOrder = 7

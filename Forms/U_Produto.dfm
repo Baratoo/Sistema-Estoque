@@ -1,5 +1,7 @@
 inherited Frm_Produto: TFrm_Produto
   Caption = 'CADASTRO DE PRODUTOS'
+  ExplicitTop = -83
+  PixelsPerInch = 96
   TextHeight = 15
   object Label1: TLabel [0]
     Left = 32
@@ -12,7 +14,7 @@ inherited Frm_Produto: TFrm_Produto
   object Label2: TLabel [1]
     Left = 32
     Top = 195
-    Width = 92
+    Width = 95
     Height = 15
     Caption = 'VALOR DE CUSTO'
     FocusControl = DB_vlrCusto
@@ -20,7 +22,7 @@ inherited Frm_Produto: TFrm_Produto
   object Label3: TLabel [2]
     Left = 302
     Top = 195
-    Width = 94
+    Width = 95
     Height = 15
     Caption = 'VALOR DE VENDA'
     FocusControl = DB_vlrVenda
@@ -28,7 +30,7 @@ inherited Frm_Produto: TFrm_Produto
   object Label4: TLabel [3]
     Left = 32
     Top = 240
-    Width = 49
+    Width = 51
     Height = 15
     Caption = 'ESTOQUE'
     FocusControl = DB_estoque
@@ -36,7 +38,7 @@ inherited Frm_Produto: TFrm_Produto
   object Label5: TLabel [4]
     Left = 302
     Top = 240
-    Width = 98
+    Width = 100
     Height = 15
     Caption = 'ESTOQUE MINIMO'
     FocusControl = DB_estoqueMin
@@ -51,7 +53,7 @@ inherited Frm_Produto: TFrm_Produto
   object Label7: TLabel [6]
     Left = 228
     Top = 96
-    Width = 60
+    Width = 61
     Height = 15
     Caption = 'CADASTRO'
     FocusControl = DB_cadastro
@@ -59,7 +61,7 @@ inherited Frm_Produto: TFrm_Produto
   object Label8: TLabel [7]
     Left = 32
     Top = 147
-    Width = 111
+    Width = 113
     Height = 15
     Caption = 'NOME DO PRODUTO'
     FocusControl = DB_descricao
@@ -82,9 +84,11 @@ inherited Frm_Produto: TFrm_Produto
   end
   inherited Panel1: TPanel
     TabOrder = 6
+    ExplicitWidth = 621
   end
   inherited Panel2: TPanel
     TabOrder = 7
+    ExplicitWidth = 621
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
     end
@@ -159,13 +163,14 @@ inherited Frm_Produto: TFrm_Produto
     Top = 165
     Width = 94
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'UNIDADE'
     DataSource = ds_padrao
     Items.Strings = (
-      'Kg'
+      'KG'
       'G'
-      'Lt'
-      'Un')
+      'LT'
+      'UN')
     TabOrder = 1
   end
   object DB_codForn: TDBEdit [20]
@@ -182,6 +187,7 @@ inherited Frm_Produto: TFrm_Produto
     Top = 312
     Width = 294
     Height = 23
+    CharCase = ecUpperCase
     DataField = 'NOME'
     DataSource = ds_padrao
     TabOrder = 11

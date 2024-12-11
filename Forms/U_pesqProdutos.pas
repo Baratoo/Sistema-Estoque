@@ -4,14 +4,14 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, U_FormPadrao, Data.DB,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, U_PesqPadrao, Data.DB,
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
   Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
 
 type
-  TFrm_pesqProdutos = class(TFrm_formPadrao)
+  TFrm_pesqProdutos = class(TFrm_pesqPadrao)
     Q_pesqPadraoID_PRODUTO: TIntegerField;
     Q_pesqPadraoPRODUTO_DESCRICAO: TStringField;
     Q_pesqPadraoVL_CUSTO: TFMTBCDField;

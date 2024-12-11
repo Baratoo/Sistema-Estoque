@@ -23,7 +23,6 @@ object Frm_pesqPadrao: TFrm_pesqPadrao
     Height = 89
     Align = alTop
     TabOrder = 0
-    ExplicitWidth = 709
     object Label1: TLabel
       Left = 7
       Top = 27
@@ -395,8 +394,8 @@ object Frm_pesqPadrao: TFrm_pesqPadrao
       TabOrder = 5
     end
     object Bit_imprimir: TBitBtn
-      Left = 1192
-      Top = 24
+      Left = 1195
+      Top = 27
       Width = 65
       Height = 44
       Glyph.Data = {
@@ -540,8 +539,6 @@ object Frm_pesqPadrao: TFrm_pesqPadrao
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitTop = 401
-    ExplicitWidth = 709
   end
   object DBGrid1: TDBGrid
     Left = 0
@@ -558,12 +555,41 @@ object Frm_pesqPadrao: TFrm_pesqPadrao
   end
   object Q_pesqPadrao: TFDQuery
     Connection = DM.conexao
-    Left = 632
-    Top = 128
+    Left = 1200
+    Top = 144
   end
   object DS_pesqPadrao: TDataSource
     DataSet = Q_pesqPadrao
-    Left = 632
-    Top = 216
+    Left = 1120
+    Top = 136
+  end
+  object DS_relPesqPadrao: TfrxDBDataset
+    UserName = 'frxDBDataset1'
+    CloseDataSource = False
+    DataSet = Q_pesqPadrao
+    BCDToCurrency = False
+    Left = 1216
+    Top = 224
+  end
+  object Rel_pesqPadrao: TfrxReport
+    Version = '6.3.1'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 45637.404769722220000000
+    ReportOptions.LastChange = 45637.404769722220000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 1120
+    Top = 224
+    Datasets = <>
+    Variables = <>
+    Style = <>
   end
 end
