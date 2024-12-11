@@ -8,7 +8,8 @@ uses
   Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client, frxClass, frxDBSet;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, frxClass, frxDBSet,
+  frxExportBaseDialog, frxExportPDF;
 
 type
   TFrm_pesqPadrao = class(TForm)
@@ -30,6 +31,7 @@ type
     DS_pesqPadrao: TDataSource;
     DS_relPesqPadrao: TfrxDBDataset;
     Rel_pesqPadrao: TfrxReport;
+    frxPDFExport1: TfrxPDFExport;
     procedure CB_chaveChange(Sender: TObject);
     procedure FormKeyPress(Sender: TObject; var Key: Char);
     procedure FormCreate(Sender: TObject);

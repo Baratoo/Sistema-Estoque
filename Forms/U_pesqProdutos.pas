@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
   FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
   FireDAC.Stan.Async, FireDAC.DApt, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
-  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls, Vcl.Buttons, Vcl.Mask, Vcl.ExtCtrls,
+  frxClass, frxDBSet;
 
 type
   TFrm_pesqProdutos = class(TFrm_pesqPadrao)
@@ -25,6 +26,7 @@ type
     procedure Bit_pesquisarClick(Sender: TObject);
     procedure Bit_transferirClick(Sender: TObject);
     procedure DBGrid1DblClick(Sender: TObject);
+    procedure Bit_imprimirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -39,6 +41,20 @@ implementation
 {$R *.dfm}
 
 uses U_DM, U_Produto;
+
+procedure TFrm_pesqProdutos.Bit_imprimirClick(Sender: TObject);
+  var caminho :string;
+begin
+  caminho := ExtractFilePath(Application.ExeName);
+  if Frm_pesqProdutos.Rel_pesqPadrao.LoadFromFile(caminho + 'Rel_Produto.fr3') then
+  begin
+    Rel_pesqPadrao.Clear;
+    Rel_pesqPadrao.LoadFromFile(ExtractFilePath(Application.ExeName) + 'Rel_Produto.fr3');
+    Rel_pesqPadrao.PrepareReport(true);
+    Rel_pesqPadrao.ShowPreparedReport;
+  end;
+
+end;
 
 procedure TFrm_pesqProdutos.Bit_pesquisarClick(Sender: TObject);
 begin
