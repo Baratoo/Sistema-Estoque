@@ -70,6 +70,9 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure DB_idProdutoExit(Sender: TObject);
     procedure Bit_okClick(Sender: TObject);
+    procedure Bit_exlcuirClick(Sender: TObject);
+    procedure Bit_deletarClick(Sender: TObject);
+    procedure Bit_pesquisarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -83,7 +86,7 @@ implementation
 
 {$R *.dfm}
 
-uses U_DM;
+uses U_DM, U_PesqCompra;
 
 procedure TFrm_compras.BitBtn1Click(Sender: TObject);
 var proximo :Integer;
@@ -95,6 +98,49 @@ begin
   Q_padraoItemID_SEQUENCIA.AsInteger := proximo;
   DB_idProduto.SetFocus;
 
+end;
+
+procedure TFrm_compras.Bit_deletarClick(Sender: TObject);
+begin
+
+  if MessageDlg('Deseja excluir a compra?', mtConfirmation, [mbOK, mbNo], 0) = mrOK then
+  begin
+    Q_padraoItem.First;
+    while Q_padraoItem.RecordCount > 0 do
+    begin
+      if Q_produto.Locate('ID_PRODUTO', Q_padraoItemID_PRODUTO.AsInteger, []) then
+      begin
+        Q_produto.Edit;
+        Q_produto.FieldByName('ESTOQUE').AsFloat := Q_produto.FieldByName('ESTOQUE').AsFloat
+          - Q_padraoItemQTDE.AsFloat;
+        Q_produto.Refresh;
+        Q_padraoItem.Delete;
+        Q_padraoItem.Next;
+        //MessageDlg('Produo excluido!', mtInformation, [mbOK], 0);
+      end;
+    end;
+    inherited;
+  end
+  else
+    Abort;
+end;
+
+procedure TFrm_compras.Bit_exlcuirClick(Sender: TObject);
+begin
+  if MessageDlg('Deseja excluir o produto?', mtConfirmation, [mbOK,mbNO], 0) = mrOK then
+  begin
+    if Q_produto.Locate('ID_PRODUTO', Q_padraoItemID_PRODUTO.AsInteger, []) then
+    begin
+      Q_produto.Edit;
+      Q_produto.FieldByName('ESTOQUE').AsFloat := Q_produto.FieldByName('ESTOQUE').AsFloat
+        - Q_padraoItemQTDE.AsFloat;
+      Q_produto.Refresh;
+      Q_padraoItem.Delete;
+      MessageDlg('Produo excluido!', mtInformation, [mbOK], 0);
+    end;
+  end
+  else
+    Abort;
 end;
 
 procedure TFrm_compras.Bit_incluirClick(Sender: TObject);
@@ -111,6 +157,36 @@ begin
   Q_padraoVALOR.asfloat := q_padraoitem.AggFields.FieldByName('SUBTOTAL').VALUE;
   Q_padrao.Post;
 
+
+  Q_padraoItem.First;
+  while not Q_padraoItem.Eof do
+  begin
+    if Q_produto.Locate('ID_PRODUTO', Q_padraoItemID_PRODUTO.AsInteger, []) then
+    begin
+      Q_produto.Edit;
+      Q_produto.FieldByName('ESTOQUE').AsFloat := Q_produto.FieldByName('ESTOQUE').AsFloat
+        + Q_padraoItemQTDE.AsFloat;
+      Q_padraoItem.Next;
+    end;
+  end;
+  Q_padraoItem.Refresh;
+  MessageDlg('Estoque atualizado!', mtInformation, [mbOK], 0);
+
+
+end;
+
+procedure TFrm_compras.Bit_pesquisarClick(Sender: TObject);
+begin
+  inherited;
+  Frm_pesqCompra := TFrm_pesqCompra.Create(self);
+  Frm_pesqCompra.ShowModal;
+  try
+      Q_padrao.Open;
+      Q_padrao.Locate('ID_COMPRA', Frm_pesqCompra.codigo, []);
+  finally
+    Frm_pesqCompra.Free;
+    Frm_pesqCompra := nil;
+  end;
 end;
 
 procedure TFrm_compras.DB_idProdutoExit(Sender: TObject);

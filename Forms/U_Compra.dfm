@@ -2,7 +2,6 @@ inherited Frm_compras: TFrm_compras
   Caption = 'CADASTRO DE COMPRAS'
   ClientHeight = 504
   ClientWidth = 988
-  ExplicitTop = -32
   ExplicitWidth = 1004
   ExplicitHeight = 542
   PixelsPerInch = 96
@@ -25,7 +24,7 @@ inherited Frm_compras: TFrm_compras
   inherited Panel2: TPanel
     Top = 440
     Width = 988
-    ExplicitTop = 562
+    ExplicitTop = 440
     ExplicitWidth = 988
     inherited DBNavigator1: TDBNavigator
       Hints.Strings = ()
@@ -35,6 +34,9 @@ inherited Frm_compras: TFrm_compras
     end
     inherited Bit_ok: TBitBtn
       OnClick = Bit_okClick
+    end
+    inherited Bit_exlcuir: TBitBtn
+      OnClick = Bit_exlcuirClick
     end
   end
   inherited Panel3: TPanel
@@ -226,8 +228,7 @@ inherited Frm_compras: TFrm_compras
   inherited Panel4: TPanel
     Top = 370
     Width = 988
-    ExplicitLeft = 0
-    ExplicitTop = 492
+    ExplicitTop = 370
     ExplicitWidth = 988
     object Label9: TLabel
       Left = 8
@@ -353,25 +354,6 @@ inherited Frm_compras: TFrm_compras
     Columns = <
       item
         Expanded = False
-        FieldName = 'ID_SEQUENCIA'
-        Title.Caption = 'ID_SEQ'
-        Width = 50
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ID_COMPRA'
-        Width = 76
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'ID_PRODUTO'
-        Width = 73
-        Visible = True
-      end
-      item
-        Expanded = False
         FieldName = 'DESCRICAO_PRODUTO'
         Title.Caption = 'PRODUTO'
         Width = 300
@@ -482,6 +464,7 @@ inherited Frm_compras: TFrm_compras
     Top = 352
   end
   inherited Q_padraoItem: TFDQuery
+    Active = True
     IndexFieldNames = 'ID_COMPRA'
     AggregatesActive = True
     MasterFields = 'ID_COMPRA'
